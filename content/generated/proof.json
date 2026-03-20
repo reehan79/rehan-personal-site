@@ -1,0 +1,138 @@
+[
+  {
+    "id": "p1",
+    "title": "Small Satellite Technology and Research Lab (SSTRL) – NCGSA",
+    "url": "https://ncgsa.org.pk/small-satellite-technology-and-research-lab-sstr/",
+    "category": "institutional",
+    "featured": true,
+    "summary": "Official institutional page validating SSTRL leadership, small-satellite capability building, and national lab relevance."
+  },
+  {
+    "id": "p2",
+    "title": "LinkedIn Profile – Dr. Rehan Mahmood",
+    "url": "https://www.linkedin.com/in/rehan-mahmood/",
+    "category": "social",
+    "featured": true,
+    "summary": "Primary public professional profile."
+  },
+  {
+    "id": "p3",
+    "title": "Google Scholar Profile",
+    "url": "https://scholar.google.com/citations?user=A5jqkssAAAAJ&hl=en",
+    "category": "publications",
+    "featured": true,
+    "summary": "Publication and citation footprint in satellite engineering and communications."
+  },
+  {
+    "id": "p4",
+    "title": "Dawn News – All You Need To Know: Pakistan's Lunar Mission",
+    "url": "https://www.youtube.com/watch?v=Q0rPmO7RLsg",
+    "category": "media",
+    "featured": true,
+    "summary": "High-value long-form media/video interview on ICUBE-Q and Pakistan's lunar mission."
+  },
+  {
+    "id": "p5",
+    "title": "Geo News – ICUBE-Q: Why a satellite in Moon's orbit is significant for Pakistan",
+    "url": "https://www.geo.tv/latest/543163-icube-q-why-a-satellite-in-moons-orbit-is-significant-for-pakistan",
+    "category": "media",
+    "featured": true,
+    "summary": "Major national media proof of ICUBE-Q relevance and mission visibility."
+  },
+  {
+    "id": "p6",
+    "title": "The News – Pakistan's maiden lunar mission sends first image from space",
+    "url": "https://www.thenews.com.pk/latest/1187438-pakistan-s-maiden-lunar-mission-sends-first-image-from-space",
+    "category": "media",
+    "featured": true,
+    "summary": "Public mission-success proof related to ICUBE-Q imaging and telemetry."
+  },
+  {
+    "id": "p7",
+    "title": "ResearchGate Profile",
+    "url": "https://www.researchgate.net/profile/Rehan-Mahmood-2",
+    "category": "publications",
+    "featured": false,
+    "summary": "Secondary academic profile and publication visibility."
+  },
+  {
+    "id": "p8",
+    "title": "ICUBE-N – Overview and Preliminary Subsystem Design",
+    "url": "https://www.researchgate.net/publication/379433600_Overview_and_Preliminary_Subsystem_Design_of_ICUBE-N_The_National_CubeSat_of_Pakistan",
+    "category": "publications",
+    "featured": true,
+    "summary": "Strong technical/publication proof for ICUBE-N."
+  },
+  {
+    "id": "p9",
+    "title": "ICUBE-1 subsystem analysis and design",
+    "url": "https://www.semanticscholar.org/paper/Institute-of-Space-Technology-CubeSat%3A-ICUBE-1-and-Mahmood-Khurshid/3d45f15a9c8336cb166ac9dbb0a2243f0a302efd",
+    "category": "publications",
+    "featured": true,
+    "summary": "Foundational technical proof for ICUBE-1."
+  },
+  {
+    "id": "p10",
+    "title": "COSPAR presentation",
+    "url": "https://app.cospar-assembly.org/2024/browser/presentation/32823",
+    "category": "conference",
+    "featured": false,
+    "summary": "Conference/speaking trace supporting technical visibility."
+  },
+  {
+    "id": "p11",
+    "title": "APSCO SSS-2A presentation",
+    "url": "https://app.cospar-assembly.org/2024/browser/presentation/32772",
+    "category": "conference",
+    "featured": true,
+    "summary": "International consortium / student satellite collaboration proof."
+  },
+  {
+    "id": "p12",
+    "title": "SSTRL Facebook – briefing about lab and projects",
+    "url": "https://www.facebook.com/SSTRL/posts/briefing-about-lab-and-its-projects-by-dr-rehan-mahmood-associate-professor-pi-s/5036868379657611/",
+    "category": "social",
+    "featured": false,
+    "summary": "Public-facing lab and workshop visibility."
+  },
+  {
+    "id": "p13",
+    "title": "LinkedIn post – seminar on small satellite technology",
+    "url": "https://www.linkedin.com/posts/rehan-mahmood_cubesat-sstrl-rsgcrl-activity-6991446994405736448-qiVF?trk=public_profile",
+    "category": "social",
+    "featured": false,
+    "summary": "Public professional activity showing thematic workshop leadership."
+  },
+  {
+    "id": "p14",
+    "title": "ICUBE-N / STEM educational video",
+    "url": "https://www.facebook.com/SSTRL/videos/cubesat-for-pakistani-kids-and-students-information-about-icube-n/198715288868306/",
+    "category": "media",
+    "featured": false,
+    "summary": "STEM and educational outreach visibility."
+  },
+  {
+    "id": "p15",
+    "title": "CubeSat for Kids",
+    "url": "https://m.youtube.com/watch?v=-OjFBUBI6Xg",
+    "category": "media",
+    "featured": false,
+    "summary": "Public-facing educational video proof."
+  },
+  {
+    "id": "p16",
+    "title": "IST / SSTRL STEM outreach post",
+    "url": "https://www.facebook.com/IST.islamabad/posts/the-small-satellite-technology-and-research-lab-of-national-center-of-gis-and-sp/1135372165283166/",
+    "category": "social",
+    "featured": false,
+    "summary": "Institutional outreach and capacity-building trace."
+  },
+  {
+    "id": "p17",
+    "title": "Space Systems Pvt. Ltd.",
+    "url": "https://spacesystems-ltd.com",
+    "category": "corporate",
+    "featured": true,
+    "summary": "Corporate/industry-side profile supporting CTO and commercialization relevance."
+  }
+]

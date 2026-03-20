@@ -1,0 +1,37 @@
+[
+  {
+    "id": "a1",
+    "title": "Cable & Wireless Prize for best overall performance",
+    "issuer": "University of Surrey",
+    "group": "recognitions",
+    "description": "Award for best overall performance during studies."
+  },
+  {
+    "id": "a2",
+    "title": "Amateur Radio License",
+    "issuer": "",
+    "group": "recognitions",
+    "description": "Amateur radio operator license."
+  },
+  {
+    "id": "a3",
+    "title": "USD 750k secured for SSTRL establishment",
+    "issuer": "",
+    "group": "leadership",
+    "description": "Competitive funding secured for the Space Systems and Technology Research Lab."
+  },
+  {
+    "id": "a4",
+    "title": "30+ researchers and staff led",
+    "issuer": "",
+    "group": "leadership",
+    "description": "Leadership of research and technical teams at SSTRL."
+  },
+  {
+    "id": "a5",
+    "title": "5 major CubeSat / lunar mission programs",
+    "issuer": "",
+    "group": "leadership",
+    "description": "Principal Investigator or technical lead for five major CubeSat and lunar mission programs."
+  }
+]

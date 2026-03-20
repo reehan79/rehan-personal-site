@@ -1,0 +1,20 @@
+[
+  {
+    "id": "projects",
+    "title": "Projects",
+    "description": "ICUBE-Q, SSS-2A, ICUBE-1, ICUBE-N, ICUBE-CSAT, KidSat. CubeSat and space systems leadership.",
+    "href": "/projects"
+  },
+  {
+    "id": "simulator",
+    "title": "NGN/NTN–PPDR Simulator",
+    "description": "Digital twin and simulator for next-generation and non-terrestrial network PPDR communications.",
+    "href": "/simulator"
+  },
+  {
+    "id": "about",
+    "title": "About",
+    "description": "20+ years in satellite technology. PhD, MSc. SSTRL Director. Consulting and Gulf-facing visibility.",
+    "href": "/about"
+  }
+]

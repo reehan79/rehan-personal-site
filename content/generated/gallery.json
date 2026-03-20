@@ -1,0 +1,16 @@
+[
+  {
+    "id": "g1",
+    "title": "Placeholder: Lab or mission image",
+    "image": "/images/gallery/placeholder-1.jpg",
+    "caption": "Replace with actual image caption.",
+    "category": "Lab"
+  },
+  {
+    "id": "g2",
+    "title": "Placeholder: Project image",
+    "image": "/images/gallery/placeholder-2.jpg",
+    "caption": "Replace with actual image caption.",
+    "category": "Projects"
+  }
+]

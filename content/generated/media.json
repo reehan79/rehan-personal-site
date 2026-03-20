@@ -1,0 +1,82 @@
+[
+  {
+    "id": "m1",
+    "title": "All You Need To Know: Pakistan's Lunar Mission",
+    "outlet": "Dawn",
+    "date": "2024",
+    "url": "https://www.youtube.com/watch?v=Q0rPmO7RLsg",
+    "type": "video",
+    "group": "media",
+    "summary": "High-value long-form media/video interview on ICUBE-Q and Pakistan's lunar mission."
+  },
+  {
+    "id": "m2",
+    "title": "ICUBE-Q: Why a satellite in Moon's orbit is significant for Pakistan",
+    "outlet": "Geo News",
+    "date": "2024",
+    "url": "https://www.geo.tv/latest/543163-icube-q-why-a-satellite-in-moons-orbit-is-significant-for-pakistan",
+    "type": "article",
+    "group": "media",
+    "summary": "Major national media proof of ICUBE-Q relevance and mission visibility."
+  },
+  {
+    "id": "m3",
+    "title": "Pakistan's maiden lunar mission sends first image from space",
+    "outlet": "The News",
+    "date": "2024",
+    "url": "https://www.thenews.com.pk/latest/1187438-pakistan-s-maiden-lunar-mission-sends-first-image-from-space",
+    "type": "article",
+    "group": "media",
+    "summary": "Public mission-success proof related to ICUBE-Q imaging and telemetry."
+  },
+  {
+    "id": "m4",
+    "title": "COSPAR presentation",
+    "outlet": "COSPAR",
+    "date": "2024",
+    "url": "https://app.cospar-assembly.org/2024/browser/presentation/32823",
+    "type": "presentation",
+    "group": "conference",
+    "summary": "Conference/speaking trace supporting technical visibility."
+  },
+  {
+    "id": "m5",
+    "title": "APSCO SSS-2A presentation",
+    "outlet": "COSPAR / APSCO",
+    "date": "2024",
+    "url": "https://app.cospar-assembly.org/2024/browser/presentation/32772",
+    "type": "presentation",
+    "group": "conference",
+    "summary": "International consortium / student satellite collaboration proof."
+  },
+  {
+    "id": "m6",
+    "title": "ICUBE-N / STEM educational video",
+    "outlet": "SSTRL",
+    "date": "2024",
+    "url": "https://www.facebook.com/SSTRL/videos/cubesat-for-pakistani-kids-and-students-information-about-icube-n/198715288868306/",
+    "type": "video",
+    "group": "stem",
+    "summary": "STEM and educational outreach visibility."
+  },
+  {
+    "id": "m7",
+    "title": "CubeSat for Kids",
+    "outlet": "YouTube",
+    "date": "2024",
+    "url": "https://m.youtube.com/watch?v=-OjFBUBI6Xg",
+    "type": "video",
+    "group": "stem",
+    "summary": "Public-facing educational video proof."
+  },
+  {
+    "id": "m8",
+    "title": "IST / SSTRL STEM outreach",
+    "outlet": "IST",
+    "date": "2024",
+    "url": "https://www.facebook.com/IST.islamabad/posts/the-small-satellite-technology-and-research-lab-of-national-center-of-gis-and-sp/1135372165283166/",
+    "type": "other",
+    "group": "stem",
+    "summary": "Institutional outreach and capacity-building trace."
+  }
+]

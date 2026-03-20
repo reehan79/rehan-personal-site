@@ -1,0 +1,38 @@
+# Project state — Dr. Rehan Mahmood Personal Site
+
+version: "1.1"
+phase: no_automation_build
+last_updated: "2025-03-20"
+
+note: "Homepage is primary recruiter-facing authority; scroll-first persuasion; direct JSON only; no automation"
+
+content_source: content/generated/*.json (direct edit)
+build: next build
+static_export: true
+
+content_status:
+  profile: seeded
+  projects: seeded
+  media: seeded
+  awards: seeded
+  proof: seeded
+  contact: seeded
+  gallery: placeholder
+  downloads: seeded
+  simulator: seeded
+  home: seeded
+
+pages:
+  - home (primary: Hero, About, Proof Strip, Evidence, Projects, Simulator, Media, Awards, Downloads, Contact)
+  - projects (list)
+  - projects/[slug] (detail)
+  - simulator (detail)
+  - media (detail)
+  - downloads (detail)
+  - about, awards, contact, gallery (redirect to /#section)
+
+placeholders:
+  - "Add profile image to public/images/hero/ and set image in content/generated/profile.json"
+  - "Add gallery images to public/images/gallery/ and update content/generated/gallery.json"
+  - "Add 4 CV PDFs to public/docs/cv/: rehan_cv_academic.pdf, rehan_cv_consulting.pdf, rehan_cv_industry.pdf, rehan_cv_ntn_satcom.pdf"
+  - "Set NEXT_PUBLIC_SITE_URL for production sitemap/robots"

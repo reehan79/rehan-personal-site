@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Rehan Mahmood — Personal Website
 
-## Getting Started
+Professional personal website for Dr. Rehan Mahmood. Focus: Satellite Communications, CubeSat Programs, Space Systems Leadership, NTN/PPDR Simulation, SSTRL, consulting, and Gulf-facing visibility.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Static export (`output: 'export'`)
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Output: `out/` (static HTML, CSS, JS). Deploy to any static host.
 
-To learn more about Next.js, take a look at the following resources:
+## Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site uses **direct structured JSON** only. No CSV, XLSX, import scripts, or automation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `content/generated/*.json` directly:
 
-## Deploy on Vercel
+| File | Purpose |
+|------|---------|
+| profile.json | Name, headline, bio, roles, email, social |
+| projects.json | Projects (slug, title, shortDescription, sections) |
+| media.json | Media items |
+| awards.json | Awards (grouped) |
+| proof.json | Proof items |
+| contact.json | Contact info |
+| downloads.json | CV downloads |
+| simulator.json | Simulator page |
+| home.json | Home highlights |
+| gallery.json | Gallery items |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Images can be added later. The site uses text-first cards where images are missing. Place assets in:
+
+- `public/images/hero/` — Profile/hero image (set `image` in profile.json)
+- `public/images/projects/` — Project thumbnails (set `image` in projects.json)
+- `public/images/gallery/` — Gallery images
+
+## CV PDFs (Required)
+
+Place four CV PDFs in `public/docs/cv/` with these **exact filenames**:
+
+- `rehan_cv_academic.pdf`
+- `rehan_cv_consulting.pdf`
+- `rehan_cv_industry.pdf`
+- `rehan_cv_ntn_satcom.pdf`
+
+Rename existing PDFs to match if needed.
+
+## Configuration
+
+- **Base URL**: Set `NEXT_PUBLIC_SITE_URL` for production sitemap/robots (e.g. `https://rehanmahmood.com`).
+
+## Documentation
+
+- [docs/MASTER_PLAN.md](docs/MASTER_PLAN.md) — v1.1 scope, v1.2 roadmap
+- [docs/STATE.yaml](docs/STATE.yaml) — Current state and placeholders
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) — Implementation log

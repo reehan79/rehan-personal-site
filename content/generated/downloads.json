@@ -1,0 +1,26 @@
+[
+  {
+    "id": "d1",
+    "title": "Academic CV",
+    "description": "Faculty roles, academic leadership, visiting professor, lab director",
+    "filePath": "/docs/cv/rehan_cv_academic.pdf"
+  },
+  {
+    "id": "d2",
+    "title": "Consulting CV",
+    "description": "Advisory work, capability-note outreach, lab-building, executive training",
+    "filePath": "/docs/cv/rehan_cv_consulting.pdf"
+  },
+  {
+    "id": "d3",
+    "title": "Industry CV",
+    "description": "Space-sector, satellite operator, program leadership, systems roles",
+    "filePath": "/docs/cv/rehan_cv_industry.pdf"
+  },
+  {
+    "id": "d4",
+    "title": "NTN / Satcom CV",
+    "description": "Satellite communications, NTN, telecom-space convergence, systems engineering",
+    "filePath": "/docs/cv/rehan_cv_ntn_satcom.pdf"
+  }
+]
