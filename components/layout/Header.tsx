@@ -1,22 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnchorNav } from "./AnchorNav";
 
-const detailNavLinks = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/simulator", label: "Simulator" },
-  { href: "/media", label: "Media" },
-  { href: "/downloads", label: "Downloads" },
-];
-
 export function Header() {
-  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isHome = pathname === "/";
 
   const closeMobile = () => setMobileOpen(false);
 
@@ -69,23 +58,7 @@ export function Header() {
             mobileOpen ? "block" : "hidden lg:block"
           }`}
         >
-          {isHome ? (
-            <AnchorNav onNavigate={closeMobile} className="border-t border-[var(--border)] lg:border-t-0" />
-          ) : (
-            <ul className="flex flex-col gap-0 border-t border-[var(--border)] lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-6 lg:gap-y-2 lg:border-t-0">
-              {detailNavLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={closeMobile}
-                    className="block px-4 py-3 text-sm font-medium text-[var(--slate-700)] transition-colors hover:bg-[var(--border)] hover:text-[var(--navy-900)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--accent)] lg:px-0 lg:py-0 lg:hover:bg-transparent"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
+          <AnchorNav onNavigate={closeMobile} className="border-t border-[var(--border)] lg:border-t-0" />
         </nav>
       </div>
     </header>

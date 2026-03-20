@@ -49,7 +49,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
           <p className="mt-1 text-sm md:text-base font-medium text-[var(--slate-700)] tracking-tight">
             Director, SSTRL · Associate Professor, IST
           </p>
-          <p className="mt-2 text-sm leading-[1.65] text-[var(--slate-600)]">
+          <p className="mt-2 text-sm leading-[1.75] text-[var(--body-text)]">
             {profile.heroBio || profile.bio.slice(0, 180) + (profile.bio.length > 180 ? "…" : "")}
           </p>
         </div>
@@ -75,14 +75,14 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
           )}
         </div>
 
-        <ul className="space-y-1 text-[0.8125rem] text-[var(--slate-600)]">
+        <ul className="space-y-1 text-[0.8125rem] text-[var(--body-text)]">
           {KEY_FACTS.map((fact) => (
             <li key={fact}>{fact}</li>
           ))}
         </ul>
 
         <div className="flex flex-wrap gap-x-3 gap-y-1 text-[0.8125rem]">
-          <a href={`mailto:${contact.email}`} className="font-medium text-[var(--accent)] hover:underline">
+          <a href={`mailto:${contact.email}`} className="font-medium text-[var(--navy-900)] hover:underline">
             Email
           </a>
           {linkedinUrl && (
@@ -90,7 +90,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[var(--accent)] hover:underline"
+              className="font-medium text-[var(--navy-900)] hover:underline"
             >
               LinkedIn
             </a>
@@ -100,7 +100,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
               href={profile.social.googleScholar}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[var(--accent)] hover:underline"
+              className="font-medium text-[var(--navy-900)] hover:underline"
             >
               Google Scholar
             </a>
@@ -108,7 +108,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
         </div>
 
         <div>
-          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--slate-500)]">
+          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--slate-600)]">
             CVs
           </p>
           <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm">
@@ -117,12 +117,12 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
                 key={item.id}
                 href={item.filePath}
                 download
-                className="font-medium text-[var(--accent)] hover:underline"
+                className="font-medium text-[var(--navy-900)] hover:underline"
               >
                 {item.title}
               </a>
             ))}
-            <Link href="/downloads" className="text-[var(--slate-500)] hover:underline">
+            <Link href="/downloads" className="text-[0.6875rem] text-[var(--slate-600)] hover:underline">
               All
             </Link>
           </div>
@@ -132,7 +132,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
           {PROOF_STRIP.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-[var(--border)] bg-white px-2.5 py-1 text-xs font-medium text-[var(--slate-600)]"
+              className="rounded-full border border-[var(--border)] bg-white px-2.5 py-1 text-xs font-medium text-[var(--slate-700)]"
             >
               {badge}
             </span>
@@ -144,8 +144,8 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
             {SECTION_NAV.map(({ id, label }) => (
               <li key={id}>
                 <Link
-                  href={`#${id}`}
-                  className="font-medium text-[var(--slate-600)] hover:text-[var(--navy-900)] hover:underline"
+                  href={`/#${id}`}
+                  className="font-medium text-[var(--slate-700)] hover:text-[var(--navy-900)] hover:underline"
                 >
                   {label}
                 </Link>

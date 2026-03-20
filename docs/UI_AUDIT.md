@@ -286,3 +286,100 @@ refactor(layout): two-column executive homepage with sticky identity rail
 - Right column feels like a high-value reading surface with tighter max-width and improved line height
 - CV buttons compact and elegant; proof strip pills with subtle definition
 - Reduced visual flatness via tracking-tight, ring on portrait, hover states
+
+---
+
+## Single-Page Conversion (Pass 5 — March 2025)
+
+### Pages Merged into Single-Page Experience
+
+| Source | Merged Into |
+|--------|-------------|
+| Simulator page content | Selected Work (NGN/NTN–PPDR inline) + Current Work (no link) |
+| ICUBE-Q project detail | Selected Work (full Mission Overview, Objectives inline) |
+| SSTRL / CubeSat Programs | Selected Work (expanded paragraph inline) |
+| NGN/NTN–PPDR project + simulator | Selected Work (merged simulator sections inline) |
+| Downloads page | Already in Contact; "All downloads" de-emphasized as subtle link |
+
+### Color / Typography Changes
+
+| Element | Before | After |
+|---------|--------|-------|
+| Body text | `text-[var(--slate-600)]` | `text-[var(--slate-700)]` |
+| Background | `#f8fafc` | `#fafbfc` |
+| Body line-height | 1.65 | 1.7 |
+| Body color (globals) | `color: var(--foreground)` | `color: var(--body-color)` (#334155) |
+| IdentityRail summary | slate-600 | slate-700 |
+| IdentityRail key facts | slate-600 | slate-700 |
+
+### Navigation Changes
+
+- **Header**: Always shows anchor-based nav (Overview, Selected Work, Current Work, Research Direction, Coverage, Contact)
+- **Removed from primary nav**: Home, Projects, Simulator, Media, Downloads
+- **IdentityRail section nav**: Links use `/#section` to always target homepage
+- **Sitemap**: Non-home pages priority 0.9/0.8 → 0.5
+
+### Optional Secondary Routes (Kept for SEO / Direct Links)
+
+- `/projects`, `/projects/[slug]`, `/simulator`, `/downloads`, `/media`, `/about`, `/awards`, `/gallery`, `/contact`
+
+### Files Changed
+
+- `app/globals.css` — Body color, line-height, background
+- `components/layout/Header.tsx` — Always AnchorNav; removed detailNavLinks
+- `app/page.tsx` — Expanded Selected Work inline; removed all "View details" links; body slate-700; mobile spacing
+- `components/layout/IdentityRail.tsx` — Typography/color; subtle "All" link; `/#section` hrefs
+- `app/sitemap.ts` — Lower priority for non-home pages
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Recommended Commit Message
+
+```
+refactor: single-page executive website with anchor-only navigation
+
+- Always show anchor nav; remove Projects/Simulator/Media/Downloads from primary nav
+- Expand Selected Work inline (ICUBE-Q, SSTRL, NGN/NTN); no page links
+- Remove View simulator / Research direction links from Current Work
+- Body text slate-700; line-height 1.7; background #fafbfc
+- De-emphasize All downloads; lower sitemap priority for secondary pages
+- Regenerate screenshots; update UI_AUDIT.md
+```
+
+---
+
+## Reading Quality Polish (Pass 6 — March 2025)
+
+### Changes
+
+| Area | Before | After |
+|------|--------|-------|
+| Body text | slate-700 (#334155) | body-text (#1e293b / slate-800) |
+| Body line-height | 1.7 | 1.75 |
+| Section headings (h2) | font-semibold | font-bold |
+| Links | accent (#334155, same as body) | navy-900 (#0f172a) |
+| CV buttons | accent | navy-900 |
+| CV label | slate-500 | slate-600 |
+| "All downloads" link | slate-500 | slate-600 |
+| Proof strip badges | slate-600 | slate-700 |
+| Section nav (IdentityRail) | slate-600 | slate-700 |
+| AnchorNav default | slate-600 | slate-700 |
+| Footer copyright | slate-500 | slate-600 |
+| Footer nav links | slate-600 | slate-700 |
+| Footer "Get in touch" | accent | navy-900 |
+| Phone (contact) | slate-600 | slate-700 |
+
+### Files Changed
+
+- `app/globals.css` — Add `--body-text`, `--link-color`; body `color: var(--body-text)`; line-height 1.75
+- `app/page.tsx` — Body text, h2 font-bold, links/buttons navy-900, metadata slate-600
+- `components/layout/IdentityRail.tsx` — Links navy-900; section nav, proof badges, key facts darker
+- `components/layout/AnchorNav.tsx` — Default slate-700
+- `components/layout/Footer.tsx` — Copyright, nav links, Get in touch darker
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Summary
+
+- Stronger body text contrast (#1e293b)
+- Links clearly distinguishable from body (navy-900)
+- CV buttons more readable
+- Reduced washed-out feel in metadata and secondary text

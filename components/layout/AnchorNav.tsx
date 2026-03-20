@@ -56,7 +56,7 @@ export function AnchorNav({
             className={`block px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--accent)] lg:px-0 lg:py-0 lg:hover:bg-transparent ${
               activeId === id
                 ? "bg-[var(--border)] text-[var(--navy-900)] lg:bg-transparent"
-                : "text-[var(--slate-600)] hover:bg-[var(--border)] hover:text-[var(--navy-900)] lg:hover:bg-transparent"
+                : "text-[var(--slate-700)] hover:bg-[var(--border)] hover:text-[var(--navy-900)] lg:hover:bg-transparent"
             }`}
           >
             {label}
