@@ -18,7 +18,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 py-4 md:py-5 ${className}`}
+      className={`scroll-mt-24 py-3 md:py-4 ${className}`}
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {(title || description) && (

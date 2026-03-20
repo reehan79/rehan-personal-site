@@ -100,6 +100,7 @@ export interface ProofItem {
   category: "institutional" | "media" | "publications" | "conference" | "social" | "corporate";
   featured: boolean;
   summary: string;
+  relevance?: string;
 }
 
 export interface Contact {
@@ -109,4 +110,11 @@ export interface Contact {
   linkedin?: string;
   location?: string;
   cta?: string;
+}
+
+export interface AuthorityImage {
+  id: string;
+  image: string;
+  caption?: string;
+  label?: string;
 }

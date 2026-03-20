@@ -8,13 +8,13 @@
   {
     "id": "simulator",
     "title": "NGN/NTN–PPDR Simulator",
-    "description": "Digital twin and simulator for next-generation and non-terrestrial network PPDR communications.",
+    "description": "Digital twin and scenario evaluation for next-generation and non-terrestrial network PPDR communications. Operator-facing workflows, visual mock interfaces, policy-simulation direction.",
     "href": "/simulator"
   },
   {
     "id": "about",
     "title": "About",
-    "description": "20+ years in satellite technology. PhD, MSc. SSTRL Director. Consulting and Gulf-facing visibility.",
+    "description": "20+ years in satellite technology. Director SSTRL, Associate Professor IST. One of three PIs for ICUBE-Q. Consulting and Gulf-facing visibility.",
     "href": "/about"
   }
 ]

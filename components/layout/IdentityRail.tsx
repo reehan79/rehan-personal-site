@@ -1,14 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Profile, Contact, Download } from "@/lib/content/types";
+import { AuthorityImageCarousel } from "@/components/ui/AuthorityImageCarousel";
 
-const PROOF_STRIP = [
-  "20+ Years",
-  "Director, SSTRL",
-  "ICUBE-Q",
-  "Satellite Communications",
-  "NTN / PPDR",
-];
+const DEFAULT_PROOF_STRIP = ["20+ years", "Director, SSTRL", "ICUBE-Q lunar mission", "Satellite Communications", "NTN / PPDR"];
 
 const SECTION_NAV = [
   { id: "overview", label: "Overview" },
@@ -16,26 +10,26 @@ const SECTION_NAV = [
   { id: "current-work", label: "Current Work" },
   { id: "research-direction", label: "Research Direction" },
   { id: "selected-coverage", label: "Selected Coverage" },
-  { id: "recognition", label: "Recognition" },
   { id: "contact", label: "Contact" },
 ] as const;
 
-const KEY_FACTS = [
-  "Director, SSTRL",
-  "Associate Professor, IST",
-  "Islamabad, Pakistan",
-  "One of three PIs, ICUBE-Q",
-  "Technical lead, SSS-2A (Pakistan side)",
+const DEFAULT_KEY_FACTS = [
+  "Associate Professor, Institute of Space Technology",
+  "Director & PI, Small Satellite Technology and Research Lab (SSTRL)",
+  "CTO, Space Systems Pvt. Ltd.",
 ];
 
 interface IdentityRailProps {
   profile: Profile;
   contact: Contact;
   downloads: Download[];
+  authorityImages: { id: string; image: string; caption?: string; label?: string }[];
 }
 
-export function IdentityRail({ profile, contact, downloads }: IdentityRailProps) {
+export function IdentityRail({ profile, contact, downloads, authorityImages }: IdentityRailProps) {
   const linkedinUrl = contact.linkedin || profile.social?.linkedin;
+  const proofStrip = profile.proofStrip?.length ? profile.proofStrip : DEFAULT_PROOF_STRIP;
+  const keyFacts = profile.keyFacts?.length ? profile.keyFacts : DEFAULT_KEY_FACTS;
 
   return (
     <aside
@@ -48,37 +42,26 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
             {profile.name}
           </h1>
           <p className="mt-1 text-sm md:text-base font-medium text-[var(--slate-700)] tracking-tight">
-            Director, SSTRL · Associate Professor, IST
+            {profile.headline || "Director, SSTRL · Associate Professor, IST"}
           </p>
           <p className="mt-2 text-sm leading-[1.85] text-[var(--body-text)]">
-            {profile.heroBio || profile.bio.slice(0, 180) + (profile.bio.length > 180 ? "…" : "")}
+            {(() => {
+              const text = profile.heroBio || profile.bio;
+              const first = text.split(/\n\n/)[0];
+              return first.length > 200 ? first.slice(0, 200) + "…" : first;
+            })()}
           </p>
         </div>
 
-        <div>
-          {profile.image ? (
-            <div className="relative h-20 w-20 overflow-hidden rounded-md bg-[var(--border)] ring-1 ring-[var(--border)] md:h-24 md:w-24">
-              <Image
-                src={profile.image}
-                alt={profile.name}
-                fill
-                className="object-cover"
-                unoptimized
-              />
-            </div>
-          ) : (
-            <div
-              className="flex h-20 w-20 items-center justify-center rounded-md bg-[var(--border)] font-serif text-2xl font-semibold text-[var(--heading-color)] ring-1 ring-[var(--border)] md:h-24 md:w-24"
-              aria-hidden
-            >
-              RM
-            </div>
-          )}
-        </div>
+        {authorityImages.length > 0 && (
+          <AuthorityImageCarousel images={authorityImages} />
+        )}
 
-        <ul className="space-y-1 text-[0.8125rem] text-[var(--body-text)]">
-          {KEY_FACTS.map((fact) => (
-            <li key={fact}>{fact}</li>
+        <ul className="space-y-2 text-[0.8125rem] text-[var(--body-text)]">
+          {keyFacts.map((fact) => (
+            <li key={fact} className="pl-2 border-l border-[var(--border)]">
+              {fact}
+            </li>
           ))}
         </ul>
 
@@ -115,20 +98,20 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
           <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
             CVs
           </p>
-          <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          <div className="mt-1.5 flex flex-wrap gap-2">
             {downloads.map((item) => (
               <a
                 key={item.id}
                 href={item.filePath}
                 download
-                className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+                className="rounded-md border border-[var(--border)] bg-white px-2.5 py-1 text-[0.8125rem] font-medium text-[var(--body-text)] transition-colors hover:border-[var(--slate-400)] hover:bg-[var(--off-white)]"
               >
                 {item.title}
               </a>
             ))}
             <Link
               href="/downloads"
-              className="text-[0.6875rem] underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+              className="text-[0.6875rem] font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] self-center"
             >
               All
             </Link>
@@ -136,10 +119,10 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
         </div>
 
         <div className="flex flex-wrap gap-1.5">
-          {PROOF_STRIP.map((badge) => (
+          {proofStrip.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-[var(--border)] bg-white px-2.5 py-1 text-xs font-medium text-[var(--slate-700)]"
+              className="rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-[0.8125rem] font-medium text-[var(--slate-700)]"
             >
               {badge}
             </span>

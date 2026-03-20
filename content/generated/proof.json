@@ -1,51 +1,57 @@
 [
   {
     "id": "p1",
-    "title": "Small Satellite Technology and Research Lab (SSTRL) – NCGSA",
+    "title": "SSTRL / NCGSA official page",
     "url": "https://ncgsa.org.pk/small-satellite-technology-and-research-lab-sstr/",
     "category": "institutional",
     "featured": true,
-    "summary": "Official institutional page validating SSTRL leadership, small-satellite capability building, and national lab relevance."
+    "summary": "Official institutional page validating SSTRL leadership and national lab relevance.",
+    "relevance": "Lab leadership"
   },
   {
     "id": "p2",
-    "title": "LinkedIn Profile – Dr. Rehan Mahmood",
+    "title": "LinkedIn",
     "url": "https://www.linkedin.com/in/rehan-mahmood/",
     "category": "social",
     "featured": true,
-    "summary": "Primary public professional profile."
+    "summary": "Primary public professional profile.",
+    "relevance": "Profile"
   },
   {
     "id": "p3",
-    "title": "Google Scholar Profile",
+    "title": "Google Scholar",
     "url": "https://scholar.google.com/citations?user=A5jqkssAAAAJ&hl=en",
     "category": "publications",
     "featured": true,
-    "summary": "Publication and citation footprint in satellite engineering and communications."
+    "summary": "Publication and citation footprint in satellite engineering and communications.",
+    "relevance": "Profile"
   },
   {
     "id": "p4",
-    "title": "Dawn News – All You Need To Know: Pakistan's Lunar Mission",
+    "title": "Dawn News – Pakistan's Lunar Mission",
     "url": "https://www.youtube.com/watch?v=Q0rPmO7RLsg",
     "category": "media",
     "featured": true,
-    "summary": "High-value long-form media/video interview on ICUBE-Q and Pakistan's lunar mission."
+    "summary": "Long-form video interview on ICUBE-Q and Pakistan's lunar mission.",
+    "relevance": "ICUBE-Q"
   },
   {
     "id": "p5",
-    "title": "Geo News – ICUBE-Q: Why a satellite in Moon's orbit is significant for Pakistan",
+    "title": "Geo News – ICUBE-Q",
     "url": "https://www.geo.tv/latest/543163-icube-q-why-a-satellite-in-moons-orbit-is-significant-for-pakistan",
     "category": "media",
     "featured": true,
-    "summary": "Major national media proof of ICUBE-Q relevance and mission visibility."
+    "summary": "Article on ICUBE-Q significance for Pakistan.",
+    "relevance": "ICUBE-Q"
   },
   {
     "id": "p6",
-    "title": "The News – Pakistan's maiden lunar mission sends first image from space",
+    "title": "The News – First lunar images",
     "url": "https://www.thenews.com.pk/latest/1187438-pakistan-s-maiden-lunar-mission-sends-first-image-from-space",
     "category": "media",
     "featured": true,
-    "summary": "Public mission-success proof related to ICUBE-Q imaging and telemetry."
+    "summary": "Report on Pakistan's maiden lunar mission first image from space.",
+    "relevance": "ICUBE-Q"
   },
   {
     "id": "p7",
@@ -81,11 +87,12 @@
   },
   {
     "id": "p11",
-    "title": "APSCO SSS-2A presentation",
+    "title": "APSCO / COSPAR presentation",
     "url": "https://app.cospar-assembly.org/2024/browser/presentation/32772",
     "category": "conference",
     "featured": true,
-    "summary": "International consortium / student satellite collaboration proof."
+    "summary": "APSCO SSS-2A presentation at COSPAR.",
+    "relevance": "SSS-2A"
   },
   {
     "id": "p12",
@@ -133,7 +140,8 @@
     "url": "https://spacesystems-ltd.com",
     "category": "corporate",
     "featured": true,
-    "summary": "Corporate/industry-side profile supporting CTO and commercialization relevance."
+    "summary": "Corporate profile; CTO role.",
+    "relevance": "Corporate"
   },
   {
     "id": "p18",
@@ -141,6 +149,7 @@
     "url": "https://www.cgtn.com",
     "category": "media",
     "featured": true,
-    "summary": "CGTN trace or interview related to ICUBE-Q and Pakistan's lunar mission. Replace URL with verified link."
+    "summary": "CGTN coverage of ICUBE-Q and Pakistan's lunar mission.",
+    "relevance": "ICUBE-Q"
   }
 ]

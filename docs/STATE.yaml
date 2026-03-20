@@ -7,6 +7,7 @@ last_updated: "2025-03-20"
 note: "Homepage is primary recruiter-facing authority; scroll-first persuasion; direct JSON only; no automation"
 
 content_source: content/generated/*.json (direct edit)
+content_source_primary: content/source-of-truth/*.md (manual source of truth; JSON populated from these files)
 build: next build
 static_export: true
 
@@ -32,6 +33,7 @@ pages:
   - about, awards, contact, gallery (redirect to /#section)
 
 placeholders:
+  - "Add authority carousel images to public/images/authority/: icube-q.jpg, sstrl-lab.jpg, conference.jpg, cubesat-hardware.jpg"
   - "Add profile image to public/images/hero/ and set image in content/generated/profile.json"
   - "Add gallery images to public/images/gallery/ and update content/generated/gallery.json"
   - "Add 4 CV PDFs to public/docs/cv/: rehan_cv_academic.pdf, rehan_cv_consulting.pdf, rehan_cv_industry.pdf, rehan_cv_ntn_satcom.pdf"

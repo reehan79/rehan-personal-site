@@ -14,9 +14,11 @@ import type {
   GalleryItem,
   ProofItem,
   Contact,
+  AuthorityImage,
 } from "./types";
 
 import profileData from "@/content/generated/profile.json";
+import authorityImagesData from "@/content/generated/authority-images.json";
 import projectsData from "@/content/generated/projects.json";
 import mediaData from "@/content/generated/media.json";
 import awardsData from "@/content/generated/awards.json";
@@ -69,4 +71,8 @@ export function loadProof(): ProofItem[] {
 
 export function loadContact(): Contact {
   return contactData as Contact;
+}
+
+export function loadAuthorityImages(): AuthorityImage[] {
+  return authorityImagesData as AuthorityImage[];
 }

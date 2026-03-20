@@ -3,6 +3,8 @@
 **Date:** March 2025  
 **Screenshots:** `docs/ui-review/`
 
+Screenshots regenerated after visual polish pass (typography, ICUBE-Q flagship, evidence links, spacing).
+
 ## Screenshots Captured
 
 | File | Page | Viewport | Notes |
@@ -501,3 +503,72 @@ feat: content and readability pass — typography, links, verified content
 - More visible hyperlinks (decoration-2, 3px offset)
 - Evidence links stand out with font-medium
 - Cleaner reading rhythm (section spacing, heading margins)
+
+---
+
+## Executive Redesign (Pass 9 — March 2025)
+
+### Layout and Structure
+
+| Area | Change |
+|------|--------|
+| Left authority rail | 340–380px sticky; name, title, executive summary, AuthorityImageCarousel, proof strip, key roles, quick links, CV buttons, section nav |
+| Section nav | 6 items: Overview, Selected Work, Current Work, Research Direction, Selected Coverage, Contact |
+| Recognition | Merged into Selected Coverage & Profiles as compact subsection |
+| Right column | max-w-4xl; space-y-8 md:space-y-12 |
+
+### New Components
+
+- **AuthorityImageCarousel** — Compact image switcher in left rail; 4 slots (ICUBE-Q, SSTRL, conference, CubeSat); 7s auto-advance; graceful placeholders when images missing
+
+### Content and Typography
+
+| Area | Change |
+|------|--------|
+| Body text | #334155 |
+| Body line-height | 1.8 |
+| Title line | Associate Professor \| Director of SSTRL \| CubeSat / Lunar Mission / Satellite Communications |
+| Proof strip | 20+ years, Director SSTRL, ICUBE-Q lunar mission, Satellite Communications, NTN / PPDR |
+| Key roles | 3 items: Associate Professor IST, Director & PI SSTRL, CTO Space Systems |
+| CV links | Compact pill buttons (Academic, Consulting, Industry, NTN / Satcom) |
+| Selected Work | Flagship ICUBE-Q with evidence link; secondary SSTRL, NGN/NTN–PPDR |
+| Current Work | NGN/NTN–PPDR digital twin, visual mock demo, policy simulator, telecom-space convergence |
+| Research Direction | Bullet list: Doppler/channel effects, resilient PPDR, deep-space image transmission, CubeSat subsystems, publication roadmap |
+| Selected Coverage | Profiles/Institutional, Media/Technical Visibility, Recognition (inline) |
+
+### Files Changed
+
+- `content/source-of-truth/rehan_master_profile.md` — Title line, compact proof row
+- `content/generated/profile.json` — headline, proofStrip, keyFacts, heroBio
+- `content/generated/authority-images.json` — **Created** — 4 image entries
+- `lib/content/types.ts` — AuthorityImage interface
+- `lib/content/load.ts` — loadAuthorityImages()
+- `components/ui/AuthorityImageCarousel.tsx` — **Created**
+- `components/layout/IdentityRail.tsx` — Carousel, 6-section nav, CV buttons, key roles
+- `components/layout/AnchorNav.tsx` — 6 sections
+- `components/layout/Footer.tsx` — 4 nav links
+- `app/page.tsx` — Section structure, merge Recognition, editorial hierarchy
+- `app/globals.css` — Body #334155, line-height 1.8
+- `app/awards/page.tsx` — Redirect to /#selected-coverage
+- `components/ui/Section.tsx` — Reduced padding
+- `components/ui/PageLayout.tsx` — Reduced padding
+- `docs/STATE.yaml` — Authority images placeholder
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Image Assets Needed
+
+Add to `public/images/authority/`: icube-q.jpg, sstrl-lab.jpg, conference.jpg, cubesat-hardware.jpg. Carousel shows placeholders until files exist.
+
+### Recommended Commit Message
+
+```
+refactor: recruiter-grade executive redesign with authority rail and visual proof
+
+- Left rail: 340-380px sticky; name, title, summary, proof strip, roles, links, CVs, section nav
+- Add AuthorityImageCarousel (ICUBE-Q, SSTRL, conference, CubeSat) with placeholders
+- Section nav: 6 items; merge Recognition into Selected Coverage
+- Selected Work: flagship ICUBE-Q + secondary SSTRL, NGN/NTN-PPDR
+- Typography: headings #0b1324, body #334155, links #1d4ed8
+- Source-of-truth and generated content updated
+- Deep pages tightened; regenerate screenshots; update UI_AUDIT
+```

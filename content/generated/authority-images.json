@@ -1,0 +1,6 @@
+[
+  { "id": "img1", "image": "/images/authority/icube-q.jpg", "caption": "ICUBE-Q mission", "label": "ICUBE-Q" },
+  { "id": "img2", "image": "/images/authority/sstrl-lab.jpg", "caption": "SSTRL lab", "label": "SSTRL" },
+  { "id": "img3", "image": "/images/authority/conference.jpg", "caption": "Conference", "label": "Conference" },
+  { "id": "img4", "image": "/images/authority/cubesat-hardware.jpg", "caption": "CubeSat hardware", "label": "CubeSat" }
+]

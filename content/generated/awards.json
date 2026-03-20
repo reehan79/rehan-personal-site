@@ -4,7 +4,7 @@
     "title": "Cable & Wireless Prize for best overall performance",
     "issuer": "University of Surrey",
     "group": "recognitions",
-    "description": "Cable & Wireless Prize for best overall performance at University of Surrey."
+    "description": "Cable & Wireless Prize for best overall performance at the University of Surrey."
   },
   {
     "id": "a2",
@@ -22,23 +22,30 @@
   },
   {
     "id": "a4",
-    "title": "USD 750k secured for SSTRL establishment",
+    "title": "USD 750k secured to establish SSTRL",
     "issuer": "",
     "group": "leadership",
     "description": "Competitive funding secured for the Space Systems and Technology Research Lab."
   },
   {
     "id": "a5",
-    "title": "30+ researchers and staff led",
+    "title": "30+ researchers and staff led in SSTRL",
     "issuer": "",
     "group": "leadership",
     "description": "Leadership of research and technical teams at SSTRL."
   },
   {
     "id": "a6",
-    "title": "5 major CubeSat / lunar mission programs",
+    "title": "Leadership / contribution across 5 major CubeSat and lunar mission programs",
     "issuer": "",
     "group": "leadership",
     "description": "Principal Investigator or technical lead for five major CubeSat and lunar mission programs."
+  },
+  {
+    "id": "a7",
+    "title": "Long-term role in CubeSat lab development, executive training, and engineering education capability building",
+    "issuer": "",
+    "group": "leadership",
+    "description": "Sustained contribution to lab establishment, executive training, and engineering education capability building."
   }
 ]

@@ -7,32 +7,25 @@ import {
   loadProof,
   loadContact,
   loadAwards,
+  loadAuthorityImages,
 } from "@/lib/content/load";
 import { IdentityRail } from "@/components/layout/IdentityRail";
 
 export const metadata: Metadata = {
   title: "Dr. Rehan Mahmood | Satellite Communications & Space Systems",
   description:
-    "Director SSTRL, Associate Professor IST. One of three PIs for ICUBE-Q, Pakistan's lunar CubeSat. Technical lead for SSS-2A. NTN/PPDR simulator.",
+    "Associate Professor, Director SSTRL. One of three PIs for ICUBE-Q, Pakistan's lunar CubeSat. NTN/PPDR research.",
   openGraph: {
     title: "Dr. Rehan Mahmood | Satellite Communications & Space Systems",
     description:
-      "Director SSTRL, Associate Professor IST. ICUBE-Q lunar mission PI. SSS-2A technical lead. NTN/PPDR research.",
+      "Associate Professor, Director SSTRL. ICUBE-Q lunar mission PI. SSS-2A technical lead. NTN/PPDR research.",
   },
 };
 
-const PUBLIC_CREDIBILITY_ORDER = ["p3", "p2", "p1", "p4", "p5", "p6", "p18", "p11", "p17"] as const;
-const CREDIBILITY_LABELS: Record<string, string> = {
-  p1: "SSTRL / NCGSA",
-  p2: "LinkedIn",
-  p3: "Google Scholar",
-  p4: "Dawn",
-  p5: "Geo News",
-  p6: "The News",
-  p11: "APSCO / COSPAR",
-  p17: "Space Systems Pvt. Ltd.",
-  p18: "CGTN",
-};
+const PROOF_GROUP_ORDER: { label: string; ids: string[] }[] = [
+  { label: "Profiles / Institutional", ids: ["p2", "p3", "p1", "p17"] },
+  { label: "Media / Technical Visibility", ids: ["p4", "p5", "p6", "p18", "p8", "p9", "p10", "p11"] },
+];
 
 export default function Home() {
   const profile = loadProfile();
@@ -41,57 +34,73 @@ export default function Home() {
   const proofItems = loadProof();
   const contact = loadContact();
   const awards = loadAwards();
+  const authorityImages = loadAuthorityImages();
 
   const icubeQ = projects.find((p) => p.slug === "icube-q");
   const ntnSimulator = projects.find((p) => p.slug === "ntn-ppdr-simulator");
-
-  const proofById = Object.fromEntries(proofItems.map((p) => [p.id, p]));
-  const credibilityItems = PUBLIC_CREDIBILITY_ORDER.map((id) => proofById[id]).filter(Boolean);
+  const icubeQDawnProof = proofItems.find((p) => p.id === "p4");
 
 
   return (
     <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
       <div className="flex flex-col gap-0 lg:flex-row lg:gap-16">
-        <IdentityRail profile={profile} contact={contact} downloads={downloads} />
+        <IdentityRail profile={profile} contact={contact} downloads={downloads} authorityImages={authorityImages} />
 
         <div className="min-w-0 flex-1 py-4 lg:py-10">
-          <div className="max-w-3xl space-y-8 md:space-y-14">
-            <section id="overview" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+          <div className="max-w-4xl space-y-8 md:space-y-12">
+            <section id="overview" className="scroll-mt-24 pt-8 first:pt-0 border-t border-[var(--border)] first:border-t-0">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Overview
               </h2>
-              <p className="mt-4 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] max-w-3xl md:text-base">
-                {profile.heroBio || profile.bio.slice(0, 220) + (profile.bio.length > 220 ? "…" : "")}
-              </p>
+              <div className="mt-5 space-y-5 text-[0.9375rem] leading-[1.8] text-[var(--body-text)] max-w-3xl md:text-base">
+                {(profile.heroBio || profile.bio).split(/\n\n/).map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </section>
 
-            <section id="selected-work" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+            <section id="selected-work" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Selected Work
               </h2>
-              <div className="mt-4 space-y-6">
+              <div className="mt-5 space-y-6">
                 {icubeQ && (
-                  <div>
+                  <div className="pl-4 border-l-2 border-[var(--link-color)] py-4 pr-4 bg-[var(--off-white)]/50 rounded-r">
                     <h3 className="font-serif text-xl font-semibold text-[var(--heading-color)] tracking-tight md:text-2xl">
                       {icubeQ.title}
                     </h3>
-                    <p className="mt-1.5 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
+                    <p className="mt-2 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
                       {icubeQ.shortDescription}
                     </p>
+                    {icubeQ.role && (
+                      <p className="mt-1.5 text-[0.8125rem] text-[var(--secondary-text)]">
+                        {icubeQ.role} · {icubeQ.year}
+                      </p>
+                    )}
+                    {icubeQDawnProof && (
+                      <a
+                        href={icubeQDawnProof.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-block font-medium text-[0.8125rem] underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+                      >
+                        {icubeQDawnProof.title} →
+                      </a>
+                    )}
                   </div>
                 )}
-                <div>
+                <div className="pl-3 border-l border-[var(--border)]">
                   <h3 className="font-serif text-lg font-semibold text-[var(--heading-color)] tracking-tight">
-                    SSTRL and CubeSat Programs
+                    SSTRL / CubeSat Programs
                   </h3>
                   <p className="mt-1.5 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                    Leadership of Pakistan's small-satellite lab ecosystem through SSTRL, including CubeSat capability
-                    development, lab establishment, training, student projects, and national mission programs such as
-                    ICUBE-1, ICUBE-N, SSS-2A, and ICUBE-CSAT.
+                    Leadership of Pakistan's small-satellite lab ecosystem through SSTRL: CubeSat capability development,
+                    lab establishment, training, student projects, and national missions (ICUBE-1, ICUBE-N, SSS-2A,
+                    ICUBE-CSAT).
                   </p>
                 </div>
                 {ntnSimulator && (
-                  <div>
+                  <div className="pl-3 border-l border-[var(--border)]">
                     <h3 className="font-serif text-lg font-semibold text-[var(--heading-color)] tracking-tight">
                       NGN/NTN–PPDR Simulator
                     </h3>
@@ -103,101 +112,128 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="current-work" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+            <section id="current-work" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Current Work
               </h2>
-              <p className="mt-4 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                Current work focuses on NGN/NTN–PPDR scenario evaluation, digital-twin-driven analysis of resilient
-                communications, and the development of visual mock interfaces for operator-facing workflows. This
-                includes ongoing work around integrated terrestrial/non-terrestrial communications, mock policy-simulation
-                ideas for PPDR decision support, and architecture-facing exploration of telecom-space convergence.
-              </p>
+              <div className="mt-5 pl-4 border-l-2 border-[var(--slate-400)] bg-[var(--off-white)]/30 rounded-r px-4 py-3">
+                <p className="text-[0.9375rem] leading-[1.8] text-[var(--body-text)] md:text-base">
+                  NGN/NTN–PPDR digital-twin and scenario evaluation; visual mock demo direction for telecom-space and
+                  PPDR workflows; policy simulator direction with mock data; current focus on resilient communications
+                  and telecom-space convergence.
+                </p>
+              </div>
             </section>
 
-            <section id="research-direction" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+            <section id="research-direction" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Research Direction
               </h2>
-              <p className="mt-4 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                Current research direction spans integrated NTN performance evaluation, Doppler and channel-effect
-                analysis, resilient communication architectures for PPDR use cases, and continued work on CubeSat
-                subsystems, on-board computing, and satellite communications. This direction builds on earlier work in
-                deep-space image transmission, nanosatellite software and hardware design, antenna systems, and compact
-                attitude-control components.
-              </p>
+              <div className="mt-5 pl-4 border-l-2 border-[var(--slate-400)] bg-[var(--off-white)]/30 rounded-r px-4 py-3">
+                <ul className="space-y-2 text-[0.9375rem] leading-[1.8] text-[var(--body-text)] md:text-base">
+                  <li>Doppler, channel, and propagation effects in integrated NTN scenarios</li>
+                  <li>Resilient communications architectures for PPDR</li>
+                  <li>Deep-space image transmission and coding/decoding</li>
+                  <li>CubeSat OBC, antennas, magnetorquers, subsystem engineering</li>
+                  <li>Future publication and demonstration roadmap</li>
+                </ul>
+              </div>
             </section>
 
-            <section id="selected-coverage" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+            <section id="selected-coverage" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Selected Coverage & Profiles
               </h2>
-              <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[0.9375rem] md:text-base">
-                {credibilityItems.map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)]"
+              <div className="mt-5 space-y-0">
+                {PROOF_GROUP_ORDER.map((group, idx) => {
+                  const items = group.ids
+                    .map((id) => proofItems.find((p) => p.id === id))
+                    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+                  if (items.length === 0) return null;
+                  return (
+                    <div
+                      key={group.label}
+                      className="pb-4 mb-4 border-b border-[var(--border)] last:border-b-0 last:pb-0 last:mb-0"
                     >
-                      {CREDIBILITY_LABELS[item.id] || item.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section id="recognition" className="scroll-mt-24">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
-                Recognition
-              </h2>
-              <div className="mt-4 space-y-4">
-                <div>
-                  <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
-                    Recognitions & Credentials
+                      <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)] mb-2">
+                        {group.label}
+                      </p>
+                      <ul className="space-y-2">
+                        {items.map((item) => (
+                          <li key={item.id} className="flex flex-col gap-0.5">
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)] w-fit rounded-sm px-1.5 py-0.5 -mx-1.5 hover:bg-[var(--link-color)]/[0.08]"
+                            >
+                              {item.title}
+                            </a>
+                            {item.summary && (
+                              <span className="text-[0.8125rem] text-[var(--muted)] leading-snug">
+                                — {item.summary}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+                <div className="pt-4 border-t border-[var(--border)]">
+                  <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)] mb-2">
+                    Recognition
                   </p>
-                  <ul className="mt-1.5 space-y-1 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                    {awards
-                      .filter((a) => a.group === "recognitions")
-                      .map((a) => (
-                        <li key={a.id}>
-                          {a.title}
-                          {a.issuer && ` — ${a.issuer}`}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
-                    Leadership & Impact
-                  </p>
-                  <ul className="mt-1.5 space-y-1 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                    {awards
-                      .filter((a) => a.group === "leadership")
-                      .map((a) => (
-                        <li key={a.id}>{a.title}</li>
-                      ))}
-                  </ul>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-[0.625rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)] mb-1">
+                        Recognitions & Credentials
+                      </p>
+                      <ul className="space-y-1">
+                        {awards
+                          .filter((a) => a.group === "recognitions")
+                          .map((a) => (
+                            <li key={a.id} className="pl-2 border-l border-[var(--border)] text-[0.875rem] leading-[1.7] text-[var(--body-text)]">
+                              {a.title}
+                              {a.issuer && ` — ${a.issuer}`}
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-[0.625rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)] mb-1">
+                        Leadership & Impact
+                      </p>
+                      <ul className="space-y-1">
+                        {awards
+                          .filter((a) => a.group === "leadership")
+                          .map((a) => (
+                            <li key={a.id} className="pl-2 border-l border-[var(--border)] text-[0.875rem] leading-[1.7] text-[var(--body-text)]">
+                              {a.title}
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section id="contact" className="scroll-mt-24 pb-6">
-              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-3xl">
+            <section id="contact" className="scroll-mt-24 pt-8 pb-6 border-t border-[var(--border)]">
+              <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Contact
               </h2>
-              <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-1 text-[0.9375rem] md:text-base">
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1 text-[0.9375rem] md:text-base">
                 <a
                   href={`mailto:${contact.email}`}
-                  className="underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+                  className="font-semibold underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1.5 py-0.5 -mx-1.5 hover:bg-[var(--link-color)]/[0.08]"
                 >
                   {contact.email}
                 </a>
                 {contact.phone && (
                   <a
                     href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                    className="underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+                    className="font-semibold underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1.5 py-0.5 -mx-1.5 hover:bg-[var(--link-color)]/[0.08]"
                   >
                     {contact.phone}
                   </a>
@@ -207,7 +243,7 @@ export default function Home() {
                     href={contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+                    className="font-semibold underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1.5 py-0.5 -mx-1.5 hover:bg-[var(--link-color)]/[0.08]"
                   >
                     LinkedIn
                   </a>

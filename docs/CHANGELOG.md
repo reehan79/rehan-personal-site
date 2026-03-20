@@ -1,5 +1,32 @@
 # Changelog
 
+## 2025-03-20 — Content Repopulated from Source-of-Truth
+
+### Content
+- profile.json: headline, bio, heroBio, roles, proofStrip, keyFacts from rehan_master_profile.md
+- projects.json: shortDescription, description, sections for ICUBE-Q, ICUBE-1, SSS-2A, ICUBE-N, KidSat, ntn-ppdr-simulator
+- awards.json: added leadership item (lab development, executive training, engineering education)
+- proof.json: refined titles, summaries; added optional relevance field
+- simulator.json: sections from rehan_research_direction.md (Digital Twin, Visual Demo, Policy Simulator, Research Themes)
+- home.json: updated descriptions
+
+### Homepage
+- Overview: full two-paragraph heroBio
+- Selected Work: stronger ICUBE-Q, SSTRL/CubeSat wording, NGN/NTN–PPDR
+- Current Work: source-of-truth wording
+- Research Direction: Doppler, channel effects, digital-twin, deep-space images, on-board computing, magnetorquers/antennas
+- Selected Coverage: grouped by Profiles, Institutional, Media, Technical/Conference, Corporate; link + summary
+- Recognition: awards from JSON including new leadership item
+
+### IdentityRail
+- Title line from profile.headline
+- keyFacts and proofStrip from profile (with defaults)
+
+### Docs
+- STATE.yaml: content_source_primary for source-of-truth
+
+---
+
 ## 2025-03-20 — v1.1 Cleanup (No-Automation Build)
 
 ### Scope

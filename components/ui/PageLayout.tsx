@@ -16,7 +16,7 @@ export function PageLayout({
   return (
     <>
       <section className="border-b border-[var(--border)] bg-[var(--off-white)]">
-        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 md:py-8">
+        <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 md:py-6">
           <h1 className="font-serif text-2xl font-bold text-[var(--heading-color)] md:text-3xl">
             {title}
           </h1>
