@@ -22,7 +22,7 @@ export default function DownloadsPage() {
       description="Role-specific CV versions for academic, consulting, industry, and satellite-communications / NTN opportunities."
     >
       <Section>
-        <ul className="space-y-4">
+        <ul className="space-y-3">
           {downloads.map((item) => (
             <li key={item.id} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <div>

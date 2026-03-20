@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         <>
           {project.sections.map((section, i) => (
             <Section key={i} title={section.title}>
-              <p className="max-w-2xl text-sm leading-relaxed text-[var(--slate-600)]">
+              <p className="max-w-4xl text-sm leading-relaxed text-[var(--slate-600)]">
                 {section.content}
               </p>
             </Section>

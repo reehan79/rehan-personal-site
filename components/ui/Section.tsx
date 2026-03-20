@@ -18,18 +18,18 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 py-8 md:py-10 ${className}`}
+      className={`scroll-mt-24 py-5 md:py-6 ${className}`}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {(title || description) && (
-          <div className="mb-6 md:mb-8 max-w-2xl">
+          <div className="mb-3 md:mb-4 max-w-2xl">
             {title && (
-              <h2 className="font-serif text-2xl font-semibold text-[var(--navy-900)] md:text-3xl">
+              <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-4 text-[var(--slate-500)] leading-relaxed">
+              <p className="mt-3 text-[var(--slate-500)] leading-relaxed">
                 {description}
               </p>
             )}

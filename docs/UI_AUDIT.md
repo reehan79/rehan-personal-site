@@ -147,3 +147,44 @@
 - Public credibility: verify all 8 links resolve; consider fallback to profile.social if proof item missing
 - Mobile: confirm proof strip and credibility grid wrap cleanly on narrow viewports
 - Projects list page (`/projects`): still uses Card grid; could be tightened for consistency
+
+---
+
+## Layout Refinement (Pass 2 — March 2025)
+
+### Before / After
+
+| Aspect | Before (Pass 1) | After (Pass 2) |
+|--------|-----------------|----------------|
+| Desktop width | max-w-6xl | max-w-7xl (homepage, header, footer) |
+| Hero right column | Small monogram (RM) or portrait | Compact professional info panel (Director, IST, location, headline, LinkedIn/Scholar/CVs) |
+| Homepage sections | 5 | 6 (added Current Work & Research Direction) |
+| Public credibility | Two-column grid | Renamed to "Selected Coverage & Profiles"; same layout |
+| Selected work | Equal-weight list | Flagship (ICUBE-Q) prominent; secondary items smaller |
+| Contact CVs | Text links | Compact pill buttons |
+| Section padding | py-8 md:py-10 | py-6 md:py-8 |
+| PageLayout | py-10 md:py-12 | py-8 md:py-10 |
+| Deep page content | max-w-2xl | max-w-4xl / max-w-5xl |
+| Footer | Overview, Projects, Downloads | Work, Coverage, Contact |
+
+### What Was Merged
+
+- Hero: slim credentials line (first 3 proofStrip items) added below buttons
+- About: already in heroBio; no standalone block
+
+### What Was Removed
+
+- Monogram placeholder when no profile image; replaced with info panel
+
+### What Was Tightened
+
+- All section py: py-8 → py-6, py-5 → py-4 (proof strip)
+- PageLayout: py-10 md:py-12 → py-8 md:py-10
+- Section: py-8 md:py-10 → py-6 md:py-8; mb-6 md:mb-8 → mb-4 md:mb-6
+- Downloads list: space-y-4 → space-y-3
+- Simulator: mt-4 → mt-3 for get-in-touch link
+
+### What Still Needs Content Later
+
+- Current Work & Research Direction: static bullets; consider moving to JSON or CMS when content evolves
+- Research direction link: currently points to /simulator; dedicated route may be added later

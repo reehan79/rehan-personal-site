@@ -46,69 +46,109 @@ export default function Home() {
   const proofById = Object.fromEntries(proofItems.map((p) => [p.id, p]));
   const credibilityItems = PUBLIC_CREDIBILITY_ORDER.map((id) => proofById[id]).filter(Boolean);
 
+  const credentialsLine = proofStrip.slice(0, 3).join(" · ");
+  const location = profile.location || contact.location || "Islamabad, Pakistan";
+
   return (
     <>
       <section id="hero" className="scroll-mt-24 border-b border-[var(--border)] bg-[var(--off-white)]">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
-            <div className="flex-1 min-w-0">
-              <h1 className="font-serif text-2xl font-semibold text-[var(--navy-900)] md:text-3xl lg:text-4xl">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 md:py-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-12">
+            <div className="min-w-0 flex-1 max-w-2xl">
+              <h1 className="font-serif text-2xl font-semibold text-[var(--navy-900)] md:text-3xl">
                 {profile.name}
               </h1>
-              <p className="mt-2 text-sm font-medium text-[var(--slate-700)]">
+              <p className="mt-1.5 text-sm font-medium text-[var(--slate-700)]">
                 Director, SSTRL · Associate Professor, IST
               </p>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[var(--slate-600)]">
+              <p className="mt-3 text-sm leading-[1.65] text-[var(--slate-600)]">
                 {profile.heroBio || profile.bio.slice(0, 180) + (profile.bio.length > 180 ? "…" : "")}
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                 <Link
                   href="#selected-work"
-                  className="inline-flex items-center rounded border border-[var(--border)] bg-white px-4 py-2 text-sm font-medium text-[var(--navy-900)] transition-colors hover:bg-[var(--border)]"
+                  className="text-sm font-medium text-[var(--slate-700)] hover:text-[var(--navy-900)]"
                 >
                   Selected work
                 </Link>
+                <span className="text-[var(--slate-400)]">·</span>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center rounded border border-[var(--border)] bg-white px-4 py-2 text-sm font-medium text-[var(--navy-900)] transition-colors hover:bg-[var(--border)]"
+                  className="text-sm font-medium text-[var(--slate-700)] hover:text-[var(--navy-900)]"
                 >
                   Contact
                 </Link>
+                <span className="text-[var(--slate-400)]">·</span>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center rounded bg-[var(--navy-900)] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                  className="text-sm font-medium text-[var(--navy-900)] hover:underline"
                 >
                   CVs
                 </Link>
               </div>
+              {credentialsLine && (
+                <p className="mt-3 text-xs text-[var(--slate-500)]">{credentialsLine}</p>
+              )}
             </div>
-            {profile.image ? (
-              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-[var(--border)] md:h-32 md:w-32">
-                <Image
-                  src={profile.image}
-                  alt={profile.name}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-            ) : (
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-md bg-[var(--border)] text-lg font-serif font-semibold text-[var(--muted)] md:h-20 md:w-20">
-                RM
-              </div>
-            )}
+            <div className="shrink-0 md:w-56">
+              {profile.image ? (
+                <div className="relative h-24 w-24 overflow-hidden rounded-md bg-[var(--border)] md:h-28 md:w-28">
+                  <Image
+                    src={profile.image}
+                    alt={profile.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+              ) : (
+                <div className="p-4 text-sm">
+                  <p className="font-medium text-[var(--navy-900)]">Director, SSTRL</p>
+                  <p className="font-medium text-[var(--navy-900)]">Associate Professor, IST</p>
+                  <p className="mt-1.5 text-[var(--slate-600)]">{location}</p>
+                  <p className="mt-1.5 text-[var(--slate-600)]">
+                    {profile.headline || "Satellite Communications | CubeSat Programs | NGN/NTN–PPDR"}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {profile.social?.googleScholar && (
+                      <a
+                        href={profile.social.googleScholar}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium text-[var(--accent)] hover:underline"
+                      >
+                        Google Scholar
+                      </a>
+                    )}
+                    {(contact.linkedin || profile.social?.linkedin) && (
+                      <a
+                        href={contact.linkedin || profile.social?.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium text-[var(--accent)] hover:underline"
+                      >
+                        LinkedIn
+                      </a>
+                    )}
+                    <Link href="#contact" className="text-xs font-medium text-[var(--accent)] hover:underline">
+                      CVs
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
       {proofStrip.length > 0 && (
-        <section id="proof" className="scroll-mt-24 border-b border-[var(--border)] bg-white py-5">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <div className="flex flex-wrap justify-center gap-2">
+        <section id="proof" className="scroll-mt-24 border-b border-[var(--border)] bg-white py-3">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
               {proofStrip.map((badge) => (
                 <span
                   key={badge}
-                  className="rounded-full border border-[var(--border)] bg-[var(--off-white)] px-3 py-1.5 text-xs font-medium text-[var(--slate-700)]"
+                  className="rounded-full bg-[var(--off-white)] px-3 py-1.5 text-xs font-medium text-[var(--slate-600)]"
                 >
                   {badge}
                 </span>
@@ -118,16 +158,16 @@ export default function Home() {
         </section>
       )}
 
-      <section id="selected-work" className="scroll-mt-24 border-b border-[var(--border)] py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="font-serif text-lg font-semibold text-[var(--navy-900)] md:text-xl">
+      <section id="selected-work" className="scroll-mt-24 border-b border-[var(--border)] py-4 sm:py-5 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
             Selected work
           </h2>
-          <ul className="mt-6 space-y-6">
+          <ul className="mt-3 space-y-3">
             {icubeQ && (
               <li>
-                <p className="text-sm text-[var(--slate-700)]">
-                  <span className="font-medium text-[var(--navy-900)]">{icubeQ.title}</span>
+                <p className="text-base leading-[1.65] text-[var(--slate-700)]">
+                  <span className="font-semibold text-[var(--navy-900)]">{icubeQ.title}</span>
                   {" — "}
                   {icubeQ.shortDescription}
                 </p>
@@ -140,7 +180,7 @@ export default function Home() {
               </li>
             )}
             <li>
-              <p className="text-sm text-[var(--slate-700)]">
+              <p className="text-sm leading-[1.65] text-[var(--slate-600)]">
                 <span className="font-medium text-[var(--navy-900)]">SSTRL / CubeSat Programs</span>
                 {" — "}
                 National CubeSat initiative. ICUBE-1, ICUBE-N, SSS-2A.
@@ -154,7 +194,7 @@ export default function Home() {
             </li>
             {ntnSimulator && (
               <li>
-                <p className="text-sm text-[var(--slate-700)]">
+                <p className="text-sm leading-[1.65] text-[var(--slate-600)]">
                   <span className="font-medium text-[var(--navy-900)]">
                     NGN/NTN–PPDR Simulator
                   </span>
@@ -173,12 +213,57 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="public-credibility" className="scroll-mt-24 border-b border-[var(--border)] py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="font-serif text-lg font-semibold text-[var(--navy-900)] md:text-xl">
-            Public credibility
+      <section id="current-work" className="scroll-mt-24 border-b border-[var(--border)] py-4 sm:py-5 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
+            Current Work & Research Direction
           </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="mt-3 grid gap-6 sm:grid-cols-2 max-w-3xl">
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-wide text-[var(--slate-500)]">
+                Current Work
+              </h3>
+              <ul className="mt-1.5 space-y-1 text-sm leading-[1.65] text-[var(--slate-600)]">
+                <li>NGN/NTN–PPDR digital twin and scenario evaluation</li>
+                <li>Visual mock demo direction for telecom-space / PPDR workflows</li>
+                <li>Policy simulator direction with mock data</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-wide text-[var(--slate-500)]">
+                Research Direction
+              </h3>
+              <ul className="mt-1.5 space-y-1 text-sm leading-[1.65] text-[var(--slate-600)]">
+                <li>NTN channel / Doppler / propagation-related work</li>
+                <li>PPDR architecture and policy evaluation</li>
+                <li>Future publication and demo roadmap</li>
+                <li>Decision-support / emergency communications direction</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <Link
+              href="/simulator"
+              className="text-sm font-medium text-[var(--accent)] hover:underline"
+            >
+              View simulator
+            </Link>
+            <Link
+              href="/simulator"
+              className="text-sm font-medium text-[var(--accent)] hover:underline"
+            >
+              Research direction
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="selected-coverage" className="scroll-mt-24 border-b border-[var(--border)] py-4 sm:py-5 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
+            Selected Coverage & Profiles
+          </h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {credibilityItems.map((item) => (
               <a
                 key={item.id}
@@ -194,22 +279,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 border-b border-[var(--border)] py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="font-serif text-lg font-semibold text-[var(--navy-900)] md:text-xl">
+      <section id="contact" className="scroll-mt-24 border-b border-[var(--border)] py-4 sm:py-5 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
             Contact
           </h2>
-          <div className="mt-4 space-y-3">
-            <a
-              href={`mailto:${contact.email}`}
-              className="block text-sm text-[var(--accent)] hover:underline"
-            >
+          <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+            <a href={`mailto:${contact.email}`} className="text-[var(--accent)] hover:underline">
               {contact.email}
             </a>
             {contact.phone && (
               <a
                 href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                className="block text-sm text-[var(--slate-600)] hover:underline"
+                className="text-[var(--slate-600)] hover:underline"
               >
                 {contact.phone}
               </a>
@@ -219,30 +301,30 @@ export default function Home() {
                 href={contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-sm text-[var(--accent)] hover:underline"
+                className="text-[var(--accent)] hover:underline"
               >
                 LinkedIn
               </a>
             )}
           </div>
-          <div className="mt-6">
+          <div className="mt-3">
             <p className="text-xs font-medium uppercase tracking-wide text-[var(--slate-500)]">
               CVs
             </p>
-            <div className="mt-2 flex flex-wrap gap-3">
+            <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
               {downloads.map((item) => (
                 <a
                   key={item.id}
                   href={item.filePath}
                   download
-                  className="text-sm font-medium text-[var(--accent)] hover:underline"
+                  className="font-medium text-[var(--accent)] hover:underline"
                 >
                   {item.title}
                 </a>
               ))}
               <Link
                 href="/downloads"
-                className="text-sm text-[var(--slate-500)] hover:underline"
+                className="text-[var(--slate-500)] hover:underline"
               >
                 All downloads
               </Link>

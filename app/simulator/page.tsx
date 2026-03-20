@@ -27,10 +27,10 @@ export default function SimulatorPage() {
       description={content.description}
     >
       <Section>
-        <p className="max-w-2xl text-sm leading-relaxed text-[var(--slate-600)]">
+        <p className="max-w-4xl text-sm leading-relaxed text-[var(--slate-600)]">
           {mergedContent}
         </p>
-        <p className="mt-4 text-sm text-[var(--slate-600)]">
+        <p className="mt-3 text-sm text-[var(--slate-600)]">
           For collaboration or consulting, please{" "}
           <Link
             href="/#contact"

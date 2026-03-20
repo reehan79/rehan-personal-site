@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 const sections = [
   { id: "proof", label: "Proof" },
   { id: "selected-work", label: "Work" },
-  { id: "public-credibility", label: "Credibility" },
+  { id: "current-work", label: "Direction" },
+  { id: "selected-coverage", label: "Coverage" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -53,8 +54,8 @@ export function AnchorNav({
             onClick={onNavigate}
             className={`block px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--accent)] lg:px-0 lg:py-0 lg:hover:bg-transparent ${
               activeId === id
-                ? "bg-[var(--border)] text-[var(--navy-900)] font-semibold lg:bg-transparent"
-                : "text-[var(--slate-700)] hover:bg-[var(--border)] hover:text-[var(--navy-900)] lg:hover:bg-transparent"
+                ? "bg-[var(--border)] text-[var(--navy-900)] lg:bg-transparent"
+                : "text-[var(--slate-600)] hover:bg-[var(--border)] hover:text-[var(--navy-900)] lg:hover:bg-transparent"
             }`}
           >
             {label}

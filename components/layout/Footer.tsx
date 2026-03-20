@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/#overview", label: "Overview" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#downloads", label: "Downloads" },
+  { href: "/#selected-work", label: "Work" },
+  { href: "/#selected-coverage", label: "Coverage" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -12,8 +11,8 @@ export function Footer() {
 
   return (
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--off-white)]">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <div className="flex flex-col gap-6 items-center text-center sm:flex-row sm:justify-between sm:items-center sm:text-left">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <div className="flex flex-col gap-4 items-center text-center sm:flex-row sm:justify-between sm:items-center sm:gap-6 sm:text-left">
           <p className="text-sm text-[var(--slate-500)]">
             © {year} Dr. Rehan Mahmood. All rights reserved.
           </p>
@@ -24,7 +23,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm font-medium text-[var(--slate-700)] transition-colors hover:text-[var(--navy-900)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 rounded"
+                      className="text-sm font-medium text-[var(--slate-600)] transition-colors hover:text-[var(--navy-900)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 rounded"
                     >
                       {link.label}
                     </Link>
@@ -34,7 +33,7 @@ export function Footer() {
             </nav>
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center rounded-md bg-[var(--navy-900)] px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 min-h-[44px]"
+              className="text-sm font-medium text-[var(--accent)] hover:underline"
             >
               Get in touch
             </Link>
