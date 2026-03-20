@@ -2,35 +2,40 @@
 
 :root {
   --background: #fafbfc;
-  --foreground: #0f172a;
-  --body-color: #334155;
+  --foreground: #0b1324;
+  --heading-color: #0b1324;
   --body-text: #1e293b;
-  --link-color: #0f172a;
-  --navy-900: #0f172a;
-  --slate-700: #334155;
-  --slate-500: #64748b;
+  --secondary-text: #475569;
+  --muted: #64748b;
+  --border: #dbe3ec;
+  --link-color: #1d4ed8;
+  --link-hover: #1e3a8a;
+  --navy-900: #0b1324;
+  --slate-700: #1e293b;
   --slate-600: #475569;
+  --slate-500: #64748b;
   --slate-400: #94a3b8;
   --off-white: #f8fafc;
   --accent: #334155;
-  --accent-hover: #0f172a;
-  --muted: #94a3b8;
-  --border: #e2e8f0;
+  --accent-hover: #0b1324;
   --transition: 150ms;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-heading: var(--heading-color);
   --color-navy-900: var(--navy-900);
   --color-slate-700: var(--slate-700);
-  --color-slate-500: var(--slate-500);
   --color-slate-600: var(--slate-600);
+  --color-slate-500: var(--slate-500);
   --color-slate-400: var(--slate-400);
   --color-off-white: var(--off-white);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-muted: var(--muted);
+  --color-link: var(--link-color);
+  --color-link-hover: var(--link-hover);
   --color-border: var(--border);
   --font-sans: var(--font-source-sans);
   --font-serif: var(--font-source-serif);
@@ -44,5 +49,5 @@ body {
   background: var(--background);
   color: var(--body-text);
   font-family: var(--font-source-sans), system-ui, sans-serif;
-  line-height: 1.75;
+  line-height: 1.85;
 }

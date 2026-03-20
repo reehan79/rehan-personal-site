@@ -27,14 +27,14 @@ export default function SimulatorPage() {
       description={content.description}
     >
       <Section>
-        <p className="max-w-4xl text-sm leading-relaxed text-[var(--slate-600)]">
+        <p className="max-w-4xl text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
           {mergedContent}
         </p>
-        <p className="mt-2 text-sm text-[var(--slate-600)]">
+        <p className="mt-3 text-[0.9375rem] text-[var(--secondary-text)]">
           For collaboration or consulting, please{" "}
           <Link
             href="/#contact"
-            className="font-medium text-[var(--accent)] hover:underline"
+            className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
           >
             get in touch
           </Link>

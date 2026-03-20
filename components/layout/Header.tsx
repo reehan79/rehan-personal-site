@@ -14,7 +14,7 @@ export function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="font-serif text-xl font-semibold text-[var(--navy-900)] transition-opacity hover:opacity-80"
+          className="font-serif text-xl font-semibold text-[var(--heading-color)] transition-opacity hover:opacity-80"
         >
           Dr. Rehan Mahmood
         </Link>

@@ -43,7 +43,7 @@ export default function ProjectsPage() {
                   </span>
                 </div>
               )}
-              <h3 className="font-serif text-lg font-semibold text-[var(--navy-900)]">
+              <h3 className="font-serif text-lg font-semibold text-[var(--heading-color)]">
                 {project.title}
               </h3>
               {project.year && (

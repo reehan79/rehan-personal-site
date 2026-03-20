@@ -26,15 +26,15 @@ export default function DownloadsPage() {
           {downloads.map((item) => (
             <li key={item.id} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <div>
-                <span className="font-medium text-[var(--navy-900)]">{item.title}</span>
+                <span className="font-medium text-[var(--heading-color)]">{item.title}</span>
                 {item.description && (
-                  <p className="mt-0.5 text-sm text-[var(--slate-500)]">{item.description}</p>
+                  <p className="mt-0.5 text-sm text-[var(--muted)]">{item.description}</p>
                 )}
               </div>
               <a
                 href={item.filePath}
                 download
-                className="shrink-0 text-sm font-medium text-[var(--accent)] hover:underline"
+                className="shrink-0 text-sm font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
               >
                 Download PDF
               </a>

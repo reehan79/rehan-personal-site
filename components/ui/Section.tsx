@@ -24,12 +24,12 @@ export function Section({
         {(title || description) && (
           <div className="mb-2 md:mb-3 max-w-2xl">
             {title && (
-              <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
+              <h2 className="font-serif text-base font-medium text-[var(--heading-color)] md:text-lg">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-3 text-[var(--slate-500)] leading-relaxed">
+              <p className="mt-3 text-[var(--muted)] leading-relaxed">
                 {description}
               </p>
             )}

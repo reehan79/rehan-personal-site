@@ -16,6 +16,7 @@ const SECTION_NAV = [
   { id: "current-work", label: "Current Work" },
   { id: "research-direction", label: "Research Direction" },
   { id: "selected-coverage", label: "Selected Coverage" },
+  { id: "recognition", label: "Recognition" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -43,13 +44,13 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
     >
       <div className="border-b border-[var(--border)] bg-[var(--off-white)] pb-4 lg:border-0 lg:bg-transparent lg:pb-0 space-y-5 lg:space-y-6">
         <div>
-          <h1 className="font-serif text-[1.75rem] font-semibold text-[var(--navy-900)] md:text-[2rem] lg:text-[2.25rem] tracking-tight">
+          <h1 className="font-serif text-[1.75rem] font-semibold text-[var(--heading-color)] md:text-[2rem] lg:text-[2.25rem] tracking-tight">
             {profile.name}
           </h1>
           <p className="mt-1 text-sm md:text-base font-medium text-[var(--slate-700)] tracking-tight">
             Director, SSTRL · Associate Professor, IST
           </p>
-          <p className="mt-2 text-sm leading-[1.75] text-[var(--body-text)]">
+          <p className="mt-2 text-sm leading-[1.85] text-[var(--body-text)]">
             {profile.heroBio || profile.bio.slice(0, 180) + (profile.bio.length > 180 ? "…" : "")}
           </p>
         </div>
@@ -67,7 +68,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
             </div>
           ) : (
             <div
-              className="flex h-20 w-20 items-center justify-center rounded-md bg-[var(--border)] font-serif text-2xl font-semibold text-[var(--navy-900)] ring-1 ring-[var(--border)] md:h-24 md:w-24"
+              className="flex h-20 w-20 items-center justify-center rounded-md bg-[var(--border)] font-serif text-2xl font-semibold text-[var(--heading-color)] ring-1 ring-[var(--border)] md:h-24 md:w-24"
               aria-hidden
             >
               RM
@@ -82,7 +83,10 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
         </ul>
 
         <div className="flex flex-wrap gap-x-3 gap-y-1 text-[0.8125rem]">
-          <a href={`mailto:${contact.email}`} className="font-medium text-[var(--navy-900)] hover:underline">
+          <a
+            href={`mailto:${contact.email}`}
+            className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+          >
             Email
           </a>
           {linkedinUrl && (
@@ -90,7 +94,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[var(--navy-900)] hover:underline"
+              className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
             >
               LinkedIn
             </a>
@@ -100,7 +104,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
               href={profile.social.googleScholar}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[var(--navy-900)] hover:underline"
+              className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
             >
               Google Scholar
             </a>
@@ -108,7 +112,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
         </div>
 
         <div>
-          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--slate-600)]">
+          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
             CVs
           </p>
           <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm">
@@ -117,12 +121,15 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
                 key={item.id}
                 href={item.filePath}
                 download
-                className="font-medium text-[var(--navy-900)] hover:underline"
+                className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
               >
                 {item.title}
               </a>
             ))}
-            <Link href="/downloads" className="text-[0.6875rem] text-[var(--slate-600)] hover:underline">
+            <Link
+              href="/downloads"
+              className="text-[0.6875rem] underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
+            >
               All
             </Link>
           </div>
@@ -145,7 +152,7 @@ export function IdentityRail({ profile, contact, downloads }: IdentityRailProps)
               <li key={id}>
                 <Link
                   href={`/#${id}`}
-                  className="font-medium text-[var(--slate-700)] hover:text-[var(--navy-900)] hover:underline"
+                  className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]"
                 >
                   {label}
                 </Link>

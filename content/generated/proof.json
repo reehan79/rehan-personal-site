@@ -134,5 +134,13 @@
     "category": "corporate",
     "featured": true,
     "summary": "Corporate/industry-side profile supporting CTO and commercialization relevance."
+  },
+  {
+    "id": "p18",
+    "title": "CGTN – ICUBE-Q coverage",
+    "url": "https://www.cgtn.com",
+    "category": "media",
+    "featured": true,
+    "summary": "CGTN trace or interview related to ICUBE-Q and Pakistan's lunar mission. Replace URL with verified link."
   }
 ]

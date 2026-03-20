@@ -1,15 +1,11 @@
 {
   "title": "NGN/NTN–PPDR Simulator",
-  "subtitle": "Digital Twin & Next-Generation Network Simulation",
-  "description": "Current work in NGN/NTN–PPDR digital twin and simulator direction. Enabling research and testing of next-generation and non-terrestrial network architectures for public protection and disaster relief communications.",
+  "subtitle": "Digital Twin & Scenario Evaluation",
+  "description": "Digital-twin and scenario-evaluation platform for resilient communications across terrestrial and non-terrestrial networks.",
   "sections": [
     {
-      "title": "Overview",
-      "content": "The NGN/NTN–PPDR simulator enables research and testing of next-generation network architectures for public safety and disaster response. It supports non-terrestrial network (NTN) scenarios including satellite and aerial platforms. Digital twin capabilities allow for protocol validation, capacity planning, and training in PPDR communications."
-    },
-    {
-      "title": "Applications",
-      "content": "Used for protocol validation, capacity planning, and training in PPDR communications. Supports Gulf-region and international collaboration on resilient emergency communications."
+      "title": "Technical Note",
+      "content": "The NGN/NTN–PPDR simulator supports research and testing of next-generation network architectures for public protection and disaster relief. It enables protocol validation, capacity planning, and training in PPDR communications across terrestrial and non-terrestrial (satellite, aerial) scenarios. Digital-twin capabilities support operator-facing KPI workflows, mock interfaces for telecom-space and PPDR workflows, and future policy-evaluation extensions. The platform targets resilient emergency communications and international collaboration."
     }
   ]
 }

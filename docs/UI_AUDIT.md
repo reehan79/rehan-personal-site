@@ -383,3 +383,121 @@ refactor: single-page executive website with anchor-only navigation
 - Links clearly distinguishable from body (navy-900)
 - CV buttons more readable
 - Reduced washed-out feel in metadata and secondary text
+
+---
+
+## Content and Readability Pass (Pass 7 — March 2025)
+
+### Typography and Color Changes
+
+| Area | Before | After |
+|------|--------|-------|
+| Headings | navy-900 (#0f172a) | heading-color (#0b1324) |
+| Body text | #1e293b | #334155 |
+| Secondary text | slate-600 | #475569 |
+| Muted / labels | #94a3b8 | #64748b |
+| Border | #e2e8f0 | #dbe3ec |
+| Links | navy-900 | link-color (#1d4ed8) |
+| Link hover | (none) | #1e3a8a |
+| Body line-height | 1.75 | 1.8 |
+| Section headings (h2) | text-xl md:text-2xl | text-2xl md:text-3xl |
+
+### Link Styling Changes
+
+- Links: `underline underline-offset-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]`
+- Applied to: Selected Coverage, Contact (email, phone, LinkedIn), CV links, IdentityRail (Email, LinkedIn, Scholar, CVs, section nav), Footer nav, simulator "get in touch", project detail links, downloads page
+
+### Content Areas Populated
+
+- **Overview**: Full verified profile (SSTRL Director, Associate Professor IST, CTO Space Systems, 20+ years, ICUBE-1/SSS-2A/ICUBE-N/ICUBE-Q/ICUBE-CSAT, NGN/NTN–PPDR)
+- **Selected Work**: ICUBE-Q (lunar mission, 3 PIs), SSTRL and CubeSat Programs (lab ecosystem, ICUBE-1/N/SSS-2A/ICUBE-CSAT), NGN/NTN–PPDR Simulator (digital-twin, KPI workflows, policy-evaluation)
+- **Current Work**: NGN/NTN–PPDR scenario evaluation, digital-twin analysis, visual mock interfaces, policy-simulation, telecom-space convergence
+- **Research Direction**: NTN performance, Doppler/channel effects, resilient PPDR architectures, CubeSat subsystems, deep-space image transmission, antenna systems, attitude-control
+- **Selected Coverage**: Google Scholar, LinkedIn, SSTRL/NCGSA, Dawn, Geo News, The News, CGTN, APSCO/COSPAR, Space Systems Pvt. Ltd.
+- **Recognition**: Recognitions & Credentials (Cable & Wireless Prize, Amateur Radio, PK-ICAN FIRST rank); Leadership & Impact (USD 750k SSTRL, 30+ researchers, 5 major CubeSat programs)
+- **Simulator page**: Concise technical note; merged sections
+- **Project descriptions**: ICUBE-Q, SSS-2A, ICUBE-N, ICUBE-1, ntn-ppdr-simulator strengthened with publication themes
+
+### Files Changed
+
+- `app/globals.css` — New variables (heading-color, link-color, link-hover, secondary-text, muted); body line-height 1.8
+- `app/page.tsx` — Typography, content, Recognition section, link styling, loadAwards
+- `components/layout/IdentityRail.tsx` — Colors, link styling, SECTION_NAV (Recognition)
+- `components/layout/AnchorNav.tsx` — Colors, sections (Recognition)
+- `components/layout/Footer.tsx` — Link styling, Recognition link
+- `components/layout/Header.tsx` — heading-color
+- `components/ui/PageLayout.tsx` — heading-color, muted
+- `components/ui/Section.tsx` — heading-color, muted
+- `app/simulator/page.tsx` — Typography, link styling
+- `app/projects/[slug]/page.tsx` — Typography, link styling
+- `app/downloads/page.tsx` — Typography, link styling
+- `content/generated/profile.json` — heroBio, bio
+- `content/generated/projects.json` — shortDescription, description, sections for icube-q, sss-2a, icube-n, icube-1, ntn-ppdr-simulator
+- `content/generated/proof.json` — CGTN (p18)
+- `content/generated/awards.json` — Cable & Wireless refinement, PK-ICAN, group values
+- `content/generated/simulator.json` — Technical note, merged sections
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Remaining Content Gaps
+
+- **CGTN URL**: Proof entry p18 uses placeholder `https://www.cgtn.com`; user to supply verified link
+- **Project images**: If missing, ProjectImage returns null (no giant placeholder)
+
+### Recommended Commit Message
+
+```
+feat: content and readability pass — typography, links, verified content
+
+- Typography: headings #0b1324, body #334155, links #1d4ed8
+- Link styling: underline-offset, distinct from body text
+- Overview, Selected Work, Current Work, Research Direction with verified copy
+- Recognition section: Recognitions & Credentials, Leadership & Impact
+- Selected Coverage: add CGTN, reorder proof items
+- Tighten simulator and project detail pages
+- Regenerate screenshots; update UI_AUDIT.md
+```
+
+---
+
+## Readability Polish (Pass 8 — March 2025)
+
+### Changes
+
+| Area | Before | After |
+|------|--------|-------|
+| Body text | #334155 | #1e293b (darker, higher contrast) |
+| Body line-height | 1.8 | 1.85 |
+| Section headings (h2) | font-bold | font-extrabold |
+| PageLayout h1 | font-semibold | font-bold |
+| Heading-to-content | mt-3 | mt-4 |
+| Section spacing | space-y-6 md:space-y-12 | space-y-8 md:space-y-14 |
+| Link underline | underline-offset-2 | underline-offset-[3px] decoration-2 |
+| Evidence links (Selected Coverage) | same as standard | font-medium, decoration-2, underline-offset-[3px] |
+
+### Link Styling
+
+- **Standard links**: `underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)]`
+- **Evidence links**: Same plus `font-medium` for clearer distinction from body text
+- Applied across: Homepage, IdentityRail, Footer, AnchorNav, simulator, project detail, downloads
+
+### Files Changed
+
+- `app/globals.css` — `--body-text` #1e293b, `--slate-700` #1e293b, body line-height 1.85
+- `app/page.tsx` — Heading weight, body leading, evidence link styling, section spacing, heading margins
+- `components/layout/IdentityRail.tsx` — Body leading, link underline styling
+- `components/layout/Footer.tsx` — Link underline styling
+- `components/layout/AnchorNav.tsx` — Link underline styling
+- `components/ui/PageLayout.tsx` — Heading weight
+- `app/simulator/page.tsx` — Body leading, link styling
+- `app/projects/[slug]/page.tsx` — Body leading, link styling
+- `app/downloads/page.tsx` — Link styling
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Summary
+
+- Darker body text for easier reading
+- Stronger section heading contrast (font-extrabold)
+- Improved line-height (1.85) for better rhythm
+- More visible hyperlinks (decoration-2, 3px offset)
+- Evidence links stand out with font-medium
+- Cleaner reading rhythm (section spacing, heading margins)
