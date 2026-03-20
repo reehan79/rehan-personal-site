@@ -1,0 +1,35 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the primary benefit of a sun-synchronous orbit for Earth observation satellites?",
+    "options": [
+      "Consistent lighting conditions for imaging",
+      "Lower fuel consumption",
+      "Higher data transmission rates",
+      "Reduced atmospheric drag"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "q2",
+    "question": "At approximately what altitude does a typical LEO satellite orbit the Earth?",
+    "options": [
+      "200-2000 km",
+      "20,000-40,000 km",
+      "100-200 km",
+      "Above 50,000 km"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "q3",
+    "question": "Which orbital parameter directly determines the maximum latitude a satellite can pass over?",
+    "options": [
+      "Inclination",
+      "Altitude",
+      "Eccentricity",
+      "RAAN"
+    ],
+    "correct_answer": 0
+  }
+]

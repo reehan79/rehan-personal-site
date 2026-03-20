@@ -12,6 +12,8 @@ const sections = [
   { id: "contact", label: "Contact" },
 ] as const;
 
+const pageLinks = [{ href: "/interactive", label: "Interactive Previews" }];
+
 export function AnchorNav({
   onNavigate,
   className = "",
@@ -58,6 +60,17 @@ export function AnchorNav({
                 ? "bg-[var(--border)] text-[var(--heading-color)] lg:bg-transparent underline underline-offset-[3px] decoration-2"
                 : "text-[var(--secondary-text)] hover:bg-[var(--border)] hover:text-[var(--heading-color)] lg:hover:bg-transparent hover:underline hover:underline-offset-[3px] hover:decoration-2"
             }`}
+          >
+            {label}
+          </Link>
+        </li>
+      ))}
+      {pageLinks.map(({ href, label }) => (
+        <li key={href}>
+          <Link
+            href={href}
+            onClick={onNavigate}
+            className="block px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--accent)] lg:px-0 lg:py-0 lg:hover:bg-transparent text-[var(--secondary-text)] hover:bg-[var(--border)] hover:text-[var(--heading-color)] lg:hover:bg-transparent hover:underline hover:underline-offset-[3px] hover:decoration-2"
           >
             {label}
           </Link>

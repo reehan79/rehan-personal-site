@@ -1,0 +1,52 @@
+[
+  {
+    "id": "scenario-1",
+    "title": "Karachi Coverage",
+    "description": "Design an orbit to keep Karachi online for 24 hours.",
+    "goal_text": "Achieve at least 60% coverage of the target region.",
+    "target_city": "Karachi",
+    "timer_sec": 300,
+    "grade_key": "G9_10",
+    "preset_key": null,
+    "rubric": {
+      "success_condition": {
+        "type": "coverage",
+        "threshold": 60
+      }
+    }
+  },
+  {
+    "id": "scenario-2",
+    "title": "Polar Reconnaissance",
+    "description": "Configure a polar orbit for high-latitude observation.",
+    "goal_text": "Use a polar orbit (inclination ≥ 85°) with score ≥ 70.",
+    "target_city": "Arctic",
+    "timer_sec": 420,
+    "grade_key": "G11_12",
+    "preset_key": null,
+    "rubric": {
+      "success_condition": {
+        "type": "score",
+        "threshold": 70,
+        "requires_polar": true
+      }
+    }
+  },
+  {
+    "id": "scenario-3",
+    "title": "SSO Mission",
+    "description": "Set up a sun-synchronous orbit for consistent imaging.",
+    "goal_text": "Sun-synchronous orbit (96-100° inclination) with score ≥ 75.",
+    "target_city": "Global",
+    "timer_sec": 360,
+    "grade_key": "G9_10",
+    "preset_key": null,
+    "rubric": {
+      "success_condition": {
+        "type": "score",
+        "threshold": 75,
+        "requires_sso": true
+      }
+    }
+  }
+]

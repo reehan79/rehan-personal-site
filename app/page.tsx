@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   loadProfile,
@@ -11,21 +10,42 @@ import {
 } from "@/lib/content/load";
 import { IdentityRail } from "@/components/layout/IdentityRail";
 
-export const metadata: Metadata = {
-  title: "Dr. Rehan Mahmood | Satellite Communications & Space Systems",
-  description:
-    "Associate Professor, Director SSTRL. One of three PIs for ICUBE-Q, Pakistan's lunar CubeSat. NTN/PPDR research.",
-  openGraph: {
-    title: "Dr. Rehan Mahmood | Satellite Communications & Space Systems",
-    description:
-      "Associate Professor, Director SSTRL. ICUBE-Q lunar mission PI. SSS-2A technical lead. NTN/PPDR research.",
-  },
-};
-
 const PROOF_GROUP_ORDER: { label: string; ids: string[] }[] = [
   { label: "Profiles / Institutional", ids: ["p2", "p3", "p1", "p17"] },
   { label: "Media / Technical Visibility", ids: ["p4", "p5", "p6", "p18", "p8", "p9", "p10", "p11"] },
 ];
+
+const OVERVIEW_BULLETS = [
+  "Director & Principal Investigator, SSTRL at IST, Islamabad",
+  "Associate Professor in satellite and communication engineering",
+  "Chief Technology Officer, Space Systems Pvt. Ltd.",
+  "20+ years in satellite communications, CubeSat systems, and technical leadership",
+  "Principal role in Pakistan's ICUBE-Q lunar CubeSat mission",
+  "Leadership across ICUBE-1, SSS-2A, ICUBE-N, ICUBE-CSAT, and STEM-focused space initiatives",
+  "Current work in NGN/NTN–PPDR digital twin, resilient communications, and policy-oriented simulation",
+];
+
+const CURRENT_WORK_BULLETS = [
+  "NGN/NTN–PPDR digital twin and scenario evaluation",
+  "Representative operator-facing views for resilient communication workflows",
+  "Telecom-space convergence for public protection and disaster relief contexts",
+  "Frontend preview layers for simulator interaction using representative mock data",
+  "Policy-oriented simulation direction for structured scenario comparison",
+  "Ongoing capability-building around mission-oriented technical platforms",
+];
+
+const RESEARCH_DIRECTION_BULLETS = [
+  "Doppler and propagation-effect analysis in integrated NTN scenarios",
+  "KPI-driven and digital-twin-oriented evaluation of resilient communication environments",
+  "5G-LENA / ns-3 aligned scenario and architecture workflows",
+  "SDR-linked experimentation, including USRP E310-oriented prototyping direction",
+  "Deep-space image transmission and coding/decoding research themes",
+  "CubeSat subsystem engineering, including OBC, antenna, and magnetorquer work",
+  "Future publication, simulator, and mission-training modules",
+];
+
+const BULLET_LIST_CLASS =
+  "mt-5 space-y-2.5 text-[0.9375rem] leading-[1.75] text-[var(--body-text)] max-w-3xl sm:text-base list-none pl-5 sm:pl-6 [&_li]:flex [&_li]:gap-x-2.5 [&_li]:before:content-['–'] [&_li]:before:shrink-0 [&_li]:before:min-w-[1ch] [&_li]:before:text-[var(--secondary-text)]";
 
 export default function Home() {
   const profile = loadProfile();
@@ -47,16 +67,16 @@ export default function Home() {
         <IdentityRail profile={profile} contact={contact} downloads={downloads} authorityImages={authorityImages} />
 
         <div className="min-w-0 flex-1 py-4 lg:py-10">
-          <div className="max-w-4xl space-y-8 md:space-y-12">
+          <div className="max-w-4xl space-y-7 md:space-y-10">
             <section id="overview" className="scroll-mt-24 pt-8 first:pt-0 border-t border-[var(--border)] first:border-t-0">
               <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Overview
               </h2>
-              <div className="mt-5 space-y-5 text-[0.9375rem] leading-[1.8] text-[var(--body-text)] max-w-3xl md:text-base">
-                {(profile.heroBio || profile.bio).split(/\n\n/).map((para, i) => (
-                  <p key={i}>{para}</p>
+              <ul className={BULLET_LIST_CLASS}>
+                {OVERVIEW_BULLETS.map((bullet, i) => (
+                  <li key={i}>{bullet}</li>
                 ))}
-              </div>
+              </ul>
             </section>
 
             <section id="selected-work" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">
@@ -116,12 +136,56 @@ export default function Home() {
               <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Current Work
               </h2>
-              <div className="mt-5 pl-4 border-l-2 border-[var(--slate-400)] bg-[var(--off-white)]/30 rounded-r px-4 py-3">
-                <p className="text-[0.9375rem] leading-[1.8] text-[var(--body-text)] md:text-base">
-                  NGN/NTN–PPDR digital-twin and scenario evaluation; visual mock demo direction for telecom-space and
-                  PPDR workflows; policy simulator direction with mock data; current focus on resilient communications
-                  and telecom-space convergence.
+              <ul className={BULLET_LIST_CLASS}>
+                {CURRENT_WORK_BULLETS.map((bullet, i) => (
+                  <li key={i}>{bullet}</li>
+                ))}
+              </ul>
+              <div className="mt-5 pl-3 border-l border-[var(--border)]">
+                <h3 className="font-serif text-base font-semibold text-[var(--heading-color)]">
+                  Selected Interactive Previews
+                </h3>
+                <p className="mt-1.5 text-[0.8125rem] leading-[1.7] text-[var(--muted)] max-w-2xl">
+                  Frontend interactive previews using representative mock data. Derived from ongoing simulator and platform development work.
                 </p>
+                <ul className="mt-3 space-y-2">
+                  <li>
+                    <Link
+                      href="/interactive/ngn-ntn"
+                      className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1 py-0.5 -mx-1 hover:bg-[var(--link-color)]/[0.08]"
+                    >
+                      NGN/NTN–PPDR Preview
+                    </Link>
+                    <span className="text-[0.8125rem] text-[var(--muted)]"> — Next-generation network and NTN simulator for PPDR communications</span>
+                  </li>
+                  <li>
+                    <Link
+                      href="/interactive/policy-sim"
+                      className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1 py-0.5 -mx-1 hover:bg-[var(--link-color)]/[0.08]"
+                    >
+                      Policy Simulator Preview
+                    </Link>
+                    <span className="text-[0.8125rem] text-[var(--muted)]"> — Policy and capacity planning for LEO and NTN scenarios</span>
+                  </li>
+                  <li>
+                    <Link
+                      href="/interactive/parwaz-orbit"
+                      className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1 py-0.5 -mx-1 hover:bg-[var(--link-color)]/[0.08]"
+                    >
+                      Parwaz Orbit Preview
+                    </Link>
+                    <span className="text-[0.8125rem] text-[var(--muted)]"> — Orbit visualization and analysis for satellite missions</span>
+                  </li>
+                  <li>
+                    <Link
+                      href="/interactive/parwaz-mvp"
+                      className="font-medium underline underline-offset-[3px] decoration-2 text-[var(--link-color)] transition-colors hover:text-[var(--link-hover)] rounded-sm px-1 py-0.5 -mx-1 hover:bg-[var(--link-color)]/[0.08]"
+                    >
+                      Parwaz MVP Preview
+                    </Link>
+                    <span className="text-[0.8125rem] text-[var(--muted)]"> — MVP demos for satellite and NTN workflows</span>
+                  </li>
+                </ul>
               </div>
             </section>
 
@@ -129,15 +193,11 @@ export default function Home() {
               <h2 className="font-serif text-2xl font-extrabold text-[var(--heading-color)] tracking-tight md:text-[1.75rem] lg:text-3xl border-b border-[var(--border)] pb-2 -tracking-[0.02em]">
                 Research Direction
               </h2>
-              <div className="mt-5 pl-4 border-l-2 border-[var(--slate-400)] bg-[var(--off-white)]/30 rounded-r px-4 py-3">
-                <ul className="space-y-2 text-[0.9375rem] leading-[1.8] text-[var(--body-text)] md:text-base">
-                  <li>Doppler, channel, and propagation effects in integrated NTN scenarios</li>
-                  <li>Resilient communications architectures for PPDR</li>
-                  <li>Deep-space image transmission and coding/decoding</li>
-                  <li>CubeSat OBC, antennas, magnetorquers, subsystem engineering</li>
-                  <li>Future publication and demonstration roadmap</li>
-                </ul>
-              </div>
+              <ul className={BULLET_LIST_CLASS}>
+                {RESEARCH_DIRECTION_BULLETS.map((bullet, i) => (
+                  <li key={i}>{bullet}</li>
+                ))}
+              </ul>
             </section>
 
             <section id="selected-coverage" className="scroll-mt-24 pt-8 border-t border-[var(--border)]">

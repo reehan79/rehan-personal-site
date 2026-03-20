@@ -1,0 +1,16 @@
+{
+  "seedId": "seed-demo-001-KHI",
+  "regionGeoJSON": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [66.0, 23.8],
+        [68.0, 23.8],
+        [68.0, 25.9],
+        [66.0, 25.9],
+        [66.0, 23.8]
+      ]
+    ]
+  },
+  "minElevDeg": 10
+}

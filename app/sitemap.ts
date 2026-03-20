@@ -10,14 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/projects`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/simulator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/media`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${base}/awards`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${base}/gallery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/downloads`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/interactive`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/interactive/ngn-ntn`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/interactive/policy-sim`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/interactive/parwaz-orbit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/interactive/parwaz-mvp`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CubeSat favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1324"/>
+      <stop offset="100%" stop-color="#123a78"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)"/>
+  <g fill="none" stroke="#e7eefb" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 22 36 17 46 24 34 29Z"/>
+    <path d="M24 22v16l10 7V29"/>
+    <path d="M34 29l12-5v16l-12 5"/>
+    <path d="M16 42c1.8-10.8 11.5-18.8 22.5-18.8 4.7 0 9.1 1.4 12.8 3.9"/>
+  </g>
+  <circle cx="16" cy="42" r="2.5" fill="#89b4ff"/>
+</svg>

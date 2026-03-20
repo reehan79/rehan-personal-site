@@ -5,6 +5,12 @@
 
 Screenshots regenerated after visual polish pass (typography, ICUBE-Q flagship, evidence links, spacing).
 
+## Portrait and SEO (March 2025)
+
+- **Portrait**: Real portrait added to left rail at `public/profile/rehan-mahmood-portrait.jpeg` (note: file is .jpeg). Placed directly below name/title/summary block, above AuthorityImageCarousel and key facts. 4:5 aspect ratio, object-cover object-[center_top] for head-and-shoulders framing, rounded-lg, subtle shadow. Desktop max-w-[220px], mobile max-w-[140px].
+- **Identity block**: Tightened spacing (space-y-4 lg:space-y-5) so name, title, portrait, proof strip, and links feel unified.
+- **SEO**: metadataBase, canonical, openGraph, twitter, JSON-LD Person schema, robots.ts, sitemap.ts, public/opengraph.png. See docs/DOMAIN_CONFIG.md for domain and Vercel checklist.
+
 ## Screenshots Captured
 
 | File | Page | Viewport | Notes |
@@ -16,6 +22,11 @@ Screenshots regenerated after visual polish pass (typography, ICUBE-Q flagship, 
 | `project-icube-q.png` | Project detail | 1920×1080 full page | ICUBE-Q mission page |
 | `simulator.png` | Simulator | 1920×1080 full page | NGN/NTN–PPDR page |
 | `downloads.png` | Downloads | 1920×1080 full page | CV downloads page |
+| `interactive-landing.png` | Interactive landing | 1920×1080 full page | Preview selection |
+| `interactive-ngn-ntn.png` | NGN/NTN preview | 1920×1080 full page | NGN/NTN scenario simulator |
+| `interactive-policy-sim.png` | Policy simulator | 1920×1080 full page | Policy scenario compare |
+| `interactive-parwaz-orbit.png` | Parwaz Orbit | 1920×1080 full page | Orbit design challenge |
+| `interactive-parwaz-mvp.png` | Parwaz MVP | 1920×1080 full page | Module selector, lab, quiz |
 
 ---
 
@@ -572,3 +583,107 @@ refactor: recruiter-grade executive redesign with authority rail and visual proo
 - Source-of-truth and generated content updated
 - Deep pages tightened; regenerate screenshots; update UI_AUDIT
 ```
+
+---
+
+## Interactive Previews (Polish Pass — March 2025)
+
+### Goals
+
+- Real and professional; not toy-like, not overdesigned, not dashboard-heavy
+- Layout clarity, loading state polish, typography hierarchy, chart readability, button restraint, consistent spacing, consistent disclaimer
+
+### Changes
+
+| Area | Change |
+|------|--------|
+| **Typography** | Section titles `font-serif text-base font-semibold`; body `text-sm text-[var(--body-text)]`; metadata `text-xs text-[var(--muted)]`; Parwaz MVP "CubeSTEM Orbit Lab" text-lg → text-base |
+| **Loading states** | Compact p-4 block; h-4 spinner; short "Loading…" text (NGN, Orbit, Parwaz MVP) |
+| **Disclaimer** | Unified `PreviewDisclaimer` component: "Interactive preview using representative mock data. No backend or API." |
+| **Buttons** | Primary `py-2` everywhere (not py-2.5/3); disabled `opacity-50` |
+| **Policy** | Scenario Selection + Run Simulation combined into one "Configuration" card |
+| **Parwaz MVP** | Emojis removed from ModuleSelector (🛰️, 🔬, 📝); use "Orbit", "Lab", "Quiz" tags; LabSlice 📍⏱ → "City:", "Time:" |
+| **Charts** | LatencyChart: YAxis tick fontSize 11, width 36; Tooltip fontSize 11px; PolicyBarChart min bar height 8px when value > 0 |
+| **Spacing** | Main preview `space-y-5`; cards `p-5`; empty state `p-6 text-center` |
+| **KPICards** | Value `text-[0.9375rem]`; sparkline `min-h-[2rem]` |
+
+### Files Changed
+
+- `src/components/interactive/shared/PreviewDisclaimer.tsx` — **Created**
+- `src/components/interactive/ngn/NgnNtnPreview.tsx` — Loading, disclaimer, button, spacing
+- `src/components/interactive/policy/PolicyPreview.tsx` — Configuration card, disclaimer, typography
+- `src/components/interactive/orbit/OrbitPreview.tsx` — Loading, disclaimer, button
+- `src/components/interactive/parwaz/ParwazMvpPreview.tsx` — Disclaimer, typography
+- `src/components/interactive/parwaz/ModuleSelector.tsx` — Emojis → text tags
+- `src/components/interactive/parwaz/LabSlice.tsx` — Emoji → labels; button py-2
+- `src/components/interactive/ngn/KPICards.tsx` — Typography, sparkline min-height
+- `src/components/interactive/ngn/LatencyChart.tsx` — Axis/tick tweaks
+- `src/components/interactive/policy/PolicyBarChart.tsx` — Min bar height
+- `src/components/interactive/orbit/OrbitControls.tsx` — Card padding
+- `scripts/capture-screenshots.mjs` — Add 5 interactive preview captures
+
+---
+
+## Interactive Previews — Technical Intro Refinements (March 2025)
+
+### Changes
+
+| Area | Change |
+|------|--------|
+| **Label** | "Current preview" → "What this preview shows" |
+| **NGN content** | Overview "digital-twin-oriented"; current work adds representative user-facing views; future direction "deeper 5G-LENA", "operator-facing digital-twin interfaces"; why it matters "terrestrial systems, NTN architectures" |
+| **Policy content** | Future direction "additional" (not "expansion to") |
+| **Spacing** | PreviewIntro `space-y-5`; intro-to-UI `mt-8 pt-8` |
+| **Labels** | `mb-1` for label–content separation |
+
+### Favicon
+
+- CubeSat-style favicon set wired via `metadata.icons` and `metadata.manifest` in app/layout.tsx
+- Icons: favicon.ico, favicon.svg, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png
+- site.webmanifest linked for PWA / Add to Home Screen
+
+---
+
+## Overview Bullets and Research Trajectory (March 2025)
+
+### Homepage Overview
+
+- Replaced paragraph-style intro with compact bullet list (7 items)
+- Items: Director & PI SSTRL, Associate Professor, CTO, 20+ years, ICUBE-Q role, leadership across missions, current NGN/NTN and policy work
+- Design: list-disc, space-y-2.5, text-led, no icons
+
+### Research Trajectory (NGN and Policy pages)
+
+- Added optional "Research Trajectory" block to PreviewIntro for ngn-ntn and policy-sim
+- NGN: 5 items (5G-LENA/ns-3, Doppler/NTN, SDR prototyping, digital-twin interfaces, scenario expansion)
+- Policy: 5 items (AI governance scenarios, evidence layers, scenario libraries, decision-support workflows, technical-policy linkage)
+- Layout: 2-column grid on sm+, subtle left border per item
+- Future direction condensed to avoid overlap with Research Trajectory
+
+---
+
+## Homepage Bullet-Led Sections (March 2025)
+
+### Overview
+- Kept as compact bullet list; wording: "technical leadership" (not "technical program leadership"); "Current work in" (not "includes"); "simulation" (not "simulation directions")
+
+### Current Work
+- Converted from paragraph to bullet list (6 items)
+- Items: NGN/NTN digital twin, operator-facing views, telecom-space convergence, frontend preview layers, policy simulation direction, capability-building
+- Removed bordered box; same list-disc styling as Overview
+- Selected Interactive Previews block retained below
+
+### Research Direction
+- Converted to new bullet list (7 items)
+- Items: Doppler/NTN, KPI/digital-twin evaluation, 5G-LENA/ns-3, SDR prototyping, deep-space image transmission, CubeSat subsystems, future publication/simulator/mission-training
+- Removed bordered box; unified bullet style
+
+### Visual Consistency
+- Shared BULLET_LIST_CLASS across Overview, Current Work, Research Direction
+- list-disc pl-6 space-y-2 marker:text-[var(--heading-color)]
+
+### Bullet Polish (March 2025)
+- Replaced list-disc with en-dash markers; `--secondary-text` for softer, deliberate feel
+- space-y-2.5 between bullets; pl-5 on mobile, pl-6 on sm+
+- Section rhythm: space-y-7 md:space-y-10 (tighter, less scroll-heavy)
+- Selected Interactive Previews: mt-5 for clearer separation from Current Work bullets

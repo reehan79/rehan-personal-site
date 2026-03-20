@@ -1,0 +1,17 @@
+[
+  {
+    "id": "baseline",
+    "name": "Baseline",
+    "description": "Standard URLLC, LEO, low impairments"
+  },
+  {
+    "id": "emergency-load",
+    "name": "Emergency Load",
+    "description": "TN outage enabled, elevated packet loss"
+  },
+  {
+    "id": "satellite-fade",
+    "name": "Satellite Fade",
+    "description": "High Doppler, fading, frequent handoffs"
+  }
+]

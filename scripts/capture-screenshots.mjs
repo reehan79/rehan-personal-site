@@ -59,6 +59,36 @@ const captures = [
     viewport: { width: 1920, height: 1080 },
     fullPage: true,
   },
+  {
+    name: "interactive-landing",
+    url: "/interactive",
+    viewport: { width: 1920, height: 1080 },
+    fullPage: true,
+  },
+  {
+    name: "interactive-ngn-ntn",
+    url: "/interactive/ngn-ntn",
+    viewport: { width: 1920, height: 1080 },
+    fullPage: true,
+  },
+  {
+    name: "interactive-policy-sim",
+    url: "/interactive/policy-sim",
+    viewport: { width: 1920, height: 1080 },
+    fullPage: true,
+  },
+  {
+    name: "interactive-parwaz-orbit",
+    url: "/interactive/parwaz-orbit",
+    viewport: { width: 1920, height: 1080 },
+    fullPage: true,
+  },
+  {
+    name: "interactive-parwaz-mvp",
+    url: "/interactive/parwaz-mvp",
+    viewport: { width: 1920, height: 1080 },
+    fullPage: true,
+  },
 ];
 
 mkdirSync(OUT_DIR, { recursive: true });

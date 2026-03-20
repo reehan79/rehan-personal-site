@@ -9,13 +9,15 @@ interface AuthorityImageCarouselProps {
   images: AuthorityImage[];
 }
 
-function PlaceholderSlide({ caption }: { caption?: string }) {
+function PlaceholderSlide({ label, caption }: { label?: string; caption?: string }) {
+  const displayLabel = label || caption || "Image";
   return (
     <div
-      className="flex aspect-[4/3] w-full items-center justify-center bg-[var(--border)] text-[var(--muted)]"
+      className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-1 rounded-md border-2 border-dashed border-[var(--border)] bg-[var(--off-white)] text-center"
       aria-hidden
     >
-      <span className="text-[0.75rem] font-medium">{caption || "Image"}</span>
+      <span className="text-sm font-semibold text-[var(--heading-color)]">{displayLabel}</span>
+      <span className="text-[0.6875rem] text-[var(--muted)]">Image coming soon</span>
     </div>
   );
 }
@@ -55,7 +57,7 @@ export function AuthorityImageCarousel({ images }: AuthorityImageCarouselProps) 
             onError={() => setError(true)}
           />
         ) : (
-          <PlaceholderSlide caption={caption} />
+          <PlaceholderSlide label={current.label} caption={current.caption} />
         )}
       </div>
       {caption && (

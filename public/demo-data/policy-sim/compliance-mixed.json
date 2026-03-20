@@ -1,0 +1,15 @@
+{
+  "run_id": "demo_compliance_mixed",
+  "mode": "compare",
+  "config": "configs/compliance_mixed",
+  "regimes": ["R0", "R1", "R2"],
+  "created_at": "2025-03-20T12:10:00Z",
+  "metrics": [
+    {"regime": "R0", "n_events": 200, "n_action_required": 45, "n_complied": 22, "compliance_rate": 0.497, "total_penalty": 0},
+    {"regime": "R1", "n_events": 200, "n_action_required": 45, "n_complied": 42, "compliance_rate": 0.944, "total_penalty": 0},
+    {"regime": "R2", "n_events": 200, "n_action_required": 45, "n_complied": 42, "compliance_rate": 0.944, "total_penalty": 1.78}
+  ],
+  "event_summary": "Heterogeneous compliance: OP_A 0.95, OP_B 0.25. R0: 22 complied (49.7%). R1/R2: 42 complied (94.4%). R2 penalty 1.78.",
+  "evidence": "## Compliance-Mixed Scenario — Evidence Report\n\n### Configuration\n- **Mode:** Compare (R0/R1/R2)\n- **Config:** compliance_mixed (OP_A compliance=0.95, OP_B=0.25)\n- **Source:** Representative values from paperA/results/MC_compliance_mixed_compare.csv\n\n### Summary\nMixed compliance profile: one operator high (0.95), one low (0.25). R1/R2 achieve 94.4% compliance vs 88.9% baseline. R2 penalty 1.78 (lower than baseline 3.56).\n\n### Regime Analysis\n- **R0:** 45 required, 22 complied. Compliance 49.7%.\n- **R1:** 45 required, 42 complied. Compliance 94.4%.\n- **R2:** Same as R1; total_penalty 1.78.\n\n### Conclusion\nCoordination improves compliance even with heterogeneous operators. Lower penalty suggests better alignment under mixed profile.",
+  "recommendation": "R1/R2 effective for mixed compliance. Consider targeted incentives for low-compliance operators."
+}

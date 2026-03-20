@@ -5,6 +5,7 @@ phase: no_automation_build
 last_updated: "2025-03-20"
 
 note: "Homepage is primary recruiter-facing authority; scroll-first persuasion; direct JSON only; no automation"
+imports_staging: "_imports/ — external source repos staged locally for selective frontend extraction only"
 
 content_source: content/generated/*.json (direct edit)
 content_source_primary: content/source-of-truth/*.md (manual source of truth; JSON populated from these files)
@@ -30,11 +31,26 @@ pages:
   - simulator (detail)
   - media (detail)
   - downloads (detail)
+  - interactive (landing with 4 preview cards)
+  - interactive/ngn-ntn (real-feel preview: scenario selector, run, KPIs, charts, events)
+  - interactive/policy-sim (real-feel: scenario selector, run compare, bar charts, evidence report)
+  - interactive/parwaz-orbit (real-feel), interactive/parwaz-mvp (real-feel)
   - about, awards, contact, gallery (redirect to /#section)
+
+interactive_previews: "Shell architecture; NGN/NTN + Policy Simulator real-feel previews; policy: 3 scenarios (baseline, shock-event, compliance-mixed) from configs/*.yaml and paperA/results/*.csv; representative frontend preview; no backend/APIs; each preview page includes compact technical intro block (title, overview, what this preview shows, current work, future direction, why it matters); NGN and Policy include Research Trajectory strip; refinements March 2025"
+homepage_overview: "Compact bullet-style (7 items); Director/PI, Professor, CTO, 20+ years, ICUBE-Q, leadership, current work"
+homepage_current_work: "Bullet list (6 items); NGN/NTN digital twin, operator-facing views, telecom-space, frontend previews, policy simulation, capability-building; Selected Interactive Previews below"
+homepage_research_direction: "Bullet list (7 items); Doppler/NTN, KPI/digital-twin, 5G-LENA/ns-3, SDR, deep-space, CubeSat, future modules"
+favicon: "CubeSat-style set (favicon.ico, .svg, 16x16, 32x32, apple-touch-icon); wired via metadata.icons and site.webmanifest"
+domain_config: "docs/DOMAIN_CONFIG.md — canonical rehan-mahmood.com; Vercel checklist; www→apex; vercel.app indexing notes"
 
 placeholders:
   - "Add authority carousel images to public/images/authority/: icube-q.jpg, sstrl-lab.jpg, conference.jpg, cubesat-hardware.jpg"
-  - "Add profile image to public/images/hero/ and set image in content/generated/profile.json"
+  - "Profile portrait: public/profile/rehan-mahmood-portrait.jpeg used in IdentityRail"
   - "Add gallery images to public/images/gallery/ and update content/generated/gallery.json"
   - "Add 4 CV PDFs to public/docs/cv/: rehan_cv_academic.pdf, rehan_cv_consulting.pdf, rehan_cv_industry.pdf, rehan_cv_ntn_satcom.pdf"
-  - "Set NEXT_PUBLIC_SITE_URL for production sitemap/robots"
+  - "Set NEXT_PUBLIC_SITE_URL=https://rehan-mahmood.com for production sitemap/robots"
+
+og_image: "public/og/rehan-mahmood-og.jpg — static 1200x630 branded social share image"
+person_schema: "src/components/seo/PersonSchema.tsx — JSON-LD Person with jobTitle, worksFor, sameAs, knowsAbout, alumniOf"
+

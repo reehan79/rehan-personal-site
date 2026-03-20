@@ -1,6 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Profile, Contact, Download } from "@/lib/content/types";
 import { AuthorityImageCarousel } from "@/components/ui/AuthorityImageCarousel";
+
+const PORTRAIT_SRC = "/profile/rehan-mahmood-portrait.jpeg";
 
 const DEFAULT_PROOF_STRIP = ["20+ years", "Director, SSTRL", "ICUBE-Q lunar mission", "Satellite Communications", "NTN / PPDR"];
 
@@ -36,23 +39,38 @@ export function IdentityRail({ profile, contact, downloads, authorityImages }: I
       className="lg:sticky lg:top-24 lg:self-start shrink-0 w-full lg:w-[360px] xl:w-[380px] lg:border-r lg:border-[var(--border)] lg:pr-8 xl:pr-10"
       aria-label="Profile and navigation"
     >
-      <div className="border-b border-[var(--border)] bg-[var(--off-white)] pb-4 lg:border-0 lg:bg-transparent lg:pb-0 space-y-5 lg:space-y-6">
-        <div>
-          <h1 className="font-serif text-[1.75rem] font-semibold text-[var(--heading-color)] md:text-[2rem] lg:text-[2.25rem] tracking-tight">
-            {profile.name}
-          </h1>
-          <p className="mt-1 text-sm md:text-base font-medium text-[var(--slate-700)] tracking-tight">
-            {profile.headline || "Director, SSTRL · Associate Professor, IST"}
-          </p>
-          <p className="mt-2 text-sm leading-[1.85] text-[var(--body-text)]">
-            {(() => {
-              const text = profile.heroBio || profile.bio;
-              const first = text.split(/\n\n/)[0];
-              return first.length > 200 ? first.slice(0, 200) + "…" : first;
-            })()}
-          </p>
+      <div className="border-b border-[var(--border)] bg-[var(--off-white)] pb-4 lg:border-0 lg:bg-transparent lg:pb-0">
+        {/* Identity block: name, title, summary, portrait — tightly grouped */}
+        <div className="space-y-3.5 lg:space-y-4">
+          <div>
+            <h1 className="font-serif text-[1.75rem] font-semibold text-[var(--heading-color)] md:text-[2rem] lg:text-[2.25rem] tracking-tight">
+              {profile.name}
+            </h1>
+            <p className="mt-1 text-sm md:text-base font-medium text-[var(--slate-700)] tracking-tight">
+              {profile.headline || "Director, SSTRL · Associate Professor, IST"}
+            </p>
+            <p className="mt-2 text-sm leading-[1.85] text-[var(--body-text)]">
+              {(() => {
+                const text = profile.heroBio || profile.bio;
+                const first = text.split(/\n\n/)[0];
+                return first.length > 200 ? first.slice(0, 200) + "…" : first;
+              })()}
+            </p>
+          </div>
+          <div className="w-full max-w-[130px] sm:max-w-[180px] lg:max-w-[200px] shrink-0 overflow-hidden rounded-lg bg-[var(--off-white)] shadow-sm ring-1 ring-[var(--border)]">
+            <Image
+              src={PORTRAIT_SRC}
+              alt="Portrait of Dr. Rehan Mahmood"
+              width={200}
+              height={250}
+              sizes="(max-width: 640px) 130px, (max-width: 1024px) 180px, 200px"
+              className="aspect-[4/5] w-full object-cover object-[50%_22%]"
+              priority
+            />
+          </div>
         </div>
 
+        <div className="mt-4 lg:mt-5 space-y-4 lg:space-y-5 border-t border-[var(--border)] pt-4 lg:pt-5">
         {authorityImages.length > 0 && (
           <AuthorityImageCarousel images={authorityImages} />
         )}
@@ -143,6 +161,7 @@ export function IdentityRail({ profile, contact, downloads, authorityImages }: I
             ))}
           </ul>
         </nav>
+        </div>
       </div>
     </aside>
   );

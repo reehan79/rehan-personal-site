@@ -1,0 +1,15 @@
+{
+  "run_id": "demo_baseline",
+  "mode": "compare",
+  "config": "configs/baseline",
+  "regimes": ["R0", "R1", "R2"],
+  "created_at": "2025-03-20T12:00:00Z",
+  "metrics": [
+    {"regime": "R0", "n_events": 200, "n_action_required": 45, "n_complied": 22, "compliance_rate": 0.497, "total_penalty": 0},
+    {"regime": "R1", "n_events": 200, "n_action_required": 45, "n_complied": 40, "compliance_rate": 0.889, "total_penalty": 0},
+    {"regime": "R2", "n_events": 200, "n_action_required": 45, "n_complied": 40, "compliance_rate": 0.889, "total_penalty": 3.56}
+  ],
+  "event_summary": "200 steps per run. R0: 45 actions required, 22 complied (49.7%). R1/R2: 45 required, 40 complied (88.9%). R2 penalty 3.56.",
+  "evidence": "## Baseline Scenario — Evidence Report\n\n### Configuration\n- **Mode:** Compare (R0/R1/R2)\n- **Config:** baseline (tau=0.65, penalty=1.0)\n- **Source:** Representative values from paperA/results/MC_baseline_compare.csv\n\n### Summary\nBaseline policy simulation across three regimes. R0 shows ~50% compliance; R1 and R2 reach ~89%. R2 accumulates penalty for non-compliance. Values derived from Monte Carlo compare runs.\n\n### Regime Analysis\n- **R0:** No coordination; 45 actions required, 22 complied. Compliance 49.7%.\n- **R1:** Coordination enabled; 45 required, 40 complied. Compliance 88.9%.\n- **R2:** Same as R1 with penalty; total_penalty 3.56.\n\n### Conclusion\nBaseline establishes reference metrics. R1/R2 coordination improves compliance significantly over R0.",
+  "recommendation": "Use R1 or R2 for baseline conditions. R0 suitable only when coordination cost is prohibitive."
+}
