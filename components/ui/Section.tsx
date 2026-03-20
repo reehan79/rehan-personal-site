@@ -18,11 +18,11 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 py-5 md:py-6 ${className}`}
+      className={`scroll-mt-24 py-4 md:py-5 ${className}`}
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {(title || description) && (
-          <div className="mb-3 md:mb-4 max-w-2xl">
+          <div className="mb-2 md:mb-3 max-w-2xl">
             {title && (
               <h2 className="font-serif text-base font-medium text-[var(--navy-900)] md:text-lg">
                 {title}

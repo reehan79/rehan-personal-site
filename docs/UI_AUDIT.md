@@ -188,3 +188,101 @@
 
 - Current Work & Research Direction: static bullets; consider moving to JSON or CMS when content evolves
 - Research direction link: currently points to /simulator; dedicated route may be added later
+
+---
+
+## Layout Refinement (Pass 3 — March 2025)
+
+### Before / After
+
+| Aspect | Before (Pass 2) | After (Pass 3) |
+|--------|-----------------|----------------|
+| Desktop layout | Single-column, max-w-7xl | Two-column: sticky left rail (340–380px) + scrollable right content |
+| Mobile layout | Single-column stack | Single-column collapse; identity block at top |
+| Left column | N/A | IdentityRail: name, title, summary, portrait/monogram, key facts, quick links, CV links, proof strip, section nav |
+| Right column | All content | Overview, Selected Work, Current Work, Research Direction, Selected Coverage, Contact |
+| Selected work | Flagship + 2 secondary (same weight) | Flagship (ICUBE-Q) text-xl; secondary items text-sm |
+| Current Work / Research Direction | Combined section | Split into separate sections with exact titles |
+| Section nav | Proof, Work, Direction, Coverage, Contact | Overview, Selected Work, Current Work, Research Direction, Coverage, Contact |
+| Typography | text-2xl/3xl name, text-base/lg headings | text-3xl/4xl name, text-lg/xl section headings |
+| Section padding | py-6 md:py-8 | py-4 md:py-5 (Section), py-6 md:py-8 (PageLayout) |
+| Proof strip badges | 5 from profile | 20+ Years, Director SSTRL, ICUBE-Q, Satellite Communications, NTN / PPDR |
+
+### Files Changed
+
+- `app/page.tsx` — Two-column layout, IdentityRail, new section structure
+- `components/layout/IdentityRail.tsx` — **New** — Left rail component
+- `components/layout/AnchorNav.tsx` — Updated section IDs and labels
+- `components/layout/Footer.tsx` — Updated anchor links
+- `components/ui/PageLayout.tsx` — Reduced padding
+- `components/ui/Section.tsx` — Reduced padding
+- `app/simulator/page.tsx` — Tighter spacing
+- `content/generated/profile.json` — Updated proofStrip/keyFacts
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Typography Changes
+
+- Page title / name: `text-2xl md:text-3xl` → `text-3xl md:text-4xl`
+- Positioning line: `text-sm` → `text-base md:text-lg font-medium`
+- Section headings: `text-base md:text-lg` → `text-lg md:text-xl font-serif font-semibold`
+- Flagship project (ICUBE-Q): `text-xl font-semibold`
+- Metadata / minor text: `text-xs` or `text-sm` with slate-500/600
+
+### What Was Compressed
+
+- Section padding (py, mb) across PageLayout, Section
+- Vertical gaps between homepage sections
+- Simulator get-in-touch link margin
+- Right column mobile padding (py-6 → py-4)
+
+### What Still Needs Content Later
+
+- Overview: may need dedicated short paragraph if heroBio is too brief
+- Current Work & Research Direction: static bullets; consider JSON/CMS when content evolves
+- Portrait: monogram placeholder when no image; add real photo later
+
+### Recommended Commit Message
+
+```
+refactor(layout): two-column executive homepage with sticky identity rail
+
+- Desktop: sticky left rail (340-380px) + scrollable right content
+- Mobile: single-column collapse
+- Left rail: name, title, summary, portrait/monogram, key facts, quick links, CV links, proof strip, section nav
+- Right: Overview, Selected Work (flagship + 2 secondary), Current Work, Research Direction, Selected Coverage, Contact
+- Stronger typography hierarchy; reduced whitespace
+- Split Current Work and Research Direction; text-led coverage list
+- Tighten deep pages (project, simulator, PageLayout, Section)
+- Regenerate screenshots; update UI_AUDIT.md
+```
+
+---
+
+## Visual Polish (Pass 4 — March 2025)
+
+### Improvements
+
+| Area | Change |
+|------|--------|
+| **Typography hierarchy** | Name: `text-[1.75rem] md:text-[2rem] lg:text-[2.25rem]`; section headings: `text-xl md:text-2xl`; body: `text-[0.9375rem] md:text-base`; metadata: `text-[0.6875rem]` uppercase |
+| **Line lengths** | Right column `max-w-4xl` → `max-w-3xl` for denser reading width |
+| **Spacing rhythm** | Section spacing `space-y-8 md:space-y-12`; heading-to-content `mt-3`; column gap `lg:gap-16` |
+| **Left rail polish** | Subtle right border (`lg:border-r`), `lg:pr-8 xl:pr-10`; portrait/monogram `ring-1 ring-[var(--border)]`; proof pills `border border-[var(--border)] bg-white`; section nav vertical on desktop |
+| **Right column** | Body `leading-[1.7]`; section headings `tracking-tight`; links `hover:text-[var(--navy-900)]` |
+| **CV buttons** | Compact `px-2.5 py-1 text-[0.8125rem]`; hover `border-[var(--slate-400)] bg-[var(--off-white)]`; no underline |
+| **Page wrapper** | `px-5 sm:px-6 lg:px-10`; `py-6 lg:py-10` for right column |
+| **Mobile** | Identity block `pb-4`; nav divider `border-t` on mobile; body 15px base for readability |
+
+### Files Changed
+
+- `components/layout/IdentityRail.tsx` — Typography scale, spacing, sticky border, proof strip, section nav layout
+- `app/page.tsx` — Typography scale, spacing, line lengths, CV button polish
+- `docs/ui-review/*.png` — Regenerated screenshots
+
+### Summary
+
+- Clearer typography scale (name > headings > body > metadata)
+- Left rail more scannable with refined spacing and subtle border
+- Right column feels like a high-value reading surface with tighter max-width and improved line height
+- CV buttons compact and elegant; proof strip pills with subtle definition
+- Reduced visual flatness via tracking-tight, ring on portrait, hover states

@@ -30,7 +30,7 @@ export default function SimulatorPage() {
         <p className="max-w-4xl text-sm leading-relaxed text-[var(--slate-600)]">
           {mergedContent}
         </p>
-        <p className="mt-3 text-sm text-[var(--slate-600)]">
+        <p className="mt-2 text-sm text-[var(--slate-600)]">
           For collaboration or consulting, please{" "}
           <Link
             href="/#contact"
