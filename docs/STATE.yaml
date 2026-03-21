@@ -2,7 +2,11 @@
 
 version: "1.1"
 phase: no_automation_build
-last_updated: "2025-03-20"
+last_updated: "2026-03-20"
+content_clarity_pass: "March 2025 — homepage bullets + projects.json + source-of-truth; ICUBE-Q/SSS-2A/ICUBE-1/indigenous SSTRL clarity"
+copy_polish: "2025-03-21 — tighter bullets, flagship blurbs, SSTRL one-paragraph scan"
+canonical_copy_pass: "2026-03-20 — Part A–E homepage + projects.json Part B/C; profile + SOT sync; screenshots"
+compact_blurbs: "2026-03-20 — shortDescription tightened for cards/home; full project copy in description/sections; SSTRL paragraph + max-w Selected Work"
 
 note: "Homepage is primary recruiter-facing authority; scroll-first persuasion; direct JSON only; no automation"
 imports_staging: "_imports/ — external source repos staged locally for selective frontend extraction only"
@@ -38,9 +42,9 @@ pages:
   - about, awards, contact, gallery (redirect to /#section)
 
 interactive_previews: "Shell architecture; NGN/NTN + Policy Simulator real-feel previews; policy: 3 scenarios (baseline, shock-event, compliance-mixed) from configs/*.yaml and paperA/results/*.csv; representative frontend preview; no backend/APIs; each preview page includes compact technical intro block (title, overview, what this preview shows, current work, future direction, why it matters); NGN and Policy include Research Trajectory strip; refinements March 2025"
-homepage_overview: "Compact bullet-style (7 items); Director/PI, Professor, CTO, 20+ years, ICUBE-Q, leadership, current work"
-homepage_current_work: "Bullet list (6 items); NGN/NTN digital twin, operator-facing views, telecom-space, frontend previews, policy simulation, capability-building; Selected Interactive Previews below"
-homepage_research_direction: "Bullet list (7 items); Doppler/NTN, KPI/digital-twin, 5G-LENA/ns-3, SDR, deep-space, CubeSat, future modules"
+homepage_overview: "Bullet-led (8 lines); Director/PI SSTRL, Associate Professor in satellite/comm, CTO, 20+ years, ICUBE-Q PI, leadership across missions, indigenous 3U + training kit, NGN/NTN–PPDR R&D"
+homepage_current_work: "Bullet-led (7 lines); 3U SSTRL, training kit + partners, NGN/NTN digital twin, operator views, telecom-space PPDR, frontend previews, policy simulation; Selected Interactive Previews below"
+homepage_research_direction: "Bullet-led (7 lines); NTN propagation, KPI/digital-twin, 5G-LENA/ns-3, SDR/USRP, deep-space coding, CubeSat subsystems, future modules"
 favicon: "CubeSat-style set (favicon.ico, .svg, 16x16, 32x32, apple-touch-icon); wired via metadata.icons and site.webmanifest"
 domain_config: "docs/DOMAIN_CONFIG.md — canonical rehan-mahmood.com; Vercel checklist; www→apex; vercel.app indexing notes"
 

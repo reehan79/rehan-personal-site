@@ -2,8 +2,8 @@
   {
     "slug": "icube-q",
     "title": "ICUBE-Q Lunar Mission",
-    "shortDescription": "Pakistan's lunar CubeSat mission launched aboard Chang'e-6. Served as one of three Principal Investigators and contributed to mission-oriented execution, payload integration, and national visibility in lunar small-satellite capability.",
-    "description": "ICUBE-Q is Pakistan's lunar CubeSat mission launched aboard Chang'e-6. Dr. Rehan Mahmood served as one of three Principal Investigators, contributing to mission-oriented execution, payload integration, and national visibility in lunar small-satellite capability.",
+    "shortDescription": "ICUBE-Q is Pakistan's lunar CubeSat mission and flew aboard China's Chang'e-6 mission. The lunar opportunity was opened to APSCO member states; Pakistan's proposal and ICUBE-Q team were selected, and Dr. Rehan Mahmood served as one of three Principal Investigators. A Chang'e-6 payload, ICUBE-Q gave Pakistan visible lunar-mission credibility.",
+    "description": "ICUBE-Q is Pakistan's lunar CubeSat mission and flew aboard China's Chang'e-6 mission. The lunar orbital opportunity was opened to APSCO member states, Pakistan's proposal and ICUBE-Q team were selected, and Dr. Rehan Mahmood served as one of three Principal Investigators. As one of the payloads associated with the Chang'e-6 mission, ICUBE-Q contributed to Pakistan's visible lunar-mission capability and public space-technology credibility.",
     "year": "2024",
     "role": "Principal Investigator (one of three)",
     "partners": "China National Space Administration, Chang'e-6 mission",
@@ -12,15 +12,15 @@
     "sections": [
       {
         "title": "Mission Overview",
-        "content": "Pakistan's lunar CubeSat mission launched aboard Chang'e-6. Served as one of three Principal Investigators and contributed to mission-oriented execution, payload integration, and national visibility in lunar small-satellite capability."
+        "content": "ICUBE-Q is Pakistan's lunar CubeSat mission and flew aboard China's Chang'e-6 mission. The lunar orbital opportunity was opened to APSCO member states, Pakistan's proposal and ICUBE-Q team were selected, and Dr. Rehan Mahmood served as one of three Principal Investigators. As one of the payloads associated with the Chang'e-6 mission, ICUBE-Q contributed to Pakistan's visible lunar-mission capability and public space-technology credibility."
       }
     ]
   },
   {
     "slug": "sss-2a",
     "title": "SSS-2A",
-    "shortDescription": "APSCO Student Small Satellite-2A developed with Shanghai Jiao Tong University. Served as the Pakistan-side technical expert / lead in areas linked to EPS, communications, and systems coordination.",
-    "description": "APSCO Student Small Satellite-2A developed with Shanghai Jiao Tong University. Dr. Rehan Mahmood served as the Pakistan-side technical expert / lead in areas linked to EPS, communications, and systems coordination.",
+    "shortDescription": "SSS-2A is part of APSCO's Student Small Satellite (SSS) program, which includes SSS-1, SSS-2A, and SSS-2B. From the Pakistan side, Dr. Rehan Mahmood served as the technical lead / expert and worked on ADCS, power, and communications in collaboration with Shanghai Jiao Tong University.",
+    "description": "SSS-2A is part of APSCO's Student Small Satellite (SSS) program, which includes SSS-1, SSS-2A, and SSS-2B. From the Pakistan side, Dr. Rehan Mahmood served as the technical lead / expert and worked on ADCS, power, and communications in collaboration with Shanghai Jiao Tong University. The program reflects structured international small-satellite collaboration and student-oriented capability development.",
     "year": "2023",
     "role": "Technical Lead (Pakistan)",
     "partners": "Shanghai Jiao Tong University, APSCO",
@@ -29,15 +29,15 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "SSS-2A is APSCO's Student Small Satellite-2A, developed collaboratively with Shanghai Jiao Tong University. As the Pakistan-side technical expert and lead, Dr. Rehan Mahmood contributed in areas linked to EPS, communications, and systems coordination. The program advances student satellite capabilities across the APSCO region."
+        "content": "SSS-2A is part of APSCO's Student Small Satellite (SSS) program, which includes SSS-1, SSS-2A, and SSS-2B. From the Pakistan side, Dr. Rehan Mahmood served as the technical lead / expert and worked on ADCS, power, and communications in collaboration with Shanghai Jiao Tong University. The program reflects structured international small-satellite collaboration and student-oriented capability development."
       }
     ]
   },
   {
     "slug": "icube-n",
     "title": "ICUBE-N",
-    "shortDescription": "Project Director for the National CubeSat of Pakistan, with current emphasis on nanosatellite architecture and subsystem capability building.",
-    "description": "Project Director for the National CubeSat of Pakistan, with current emphasis on nanosatellite architecture and subsystem capability building.",
+    "shortDescription": "ICUBE-N reflects national CubeSat capability-building with emphasis on indigenous architecture, subsystem development, and mission-oriented nanosatellite engineering through SSTRL and associated programs.",
+    "description": "ICUBE-N reflects national CubeSat capability-building with current emphasis on indigenous architecture, subsystem development, and mission-oriented nanosatellite engineering through SSTRL and associated programs.",
     "year": "2024",
     "role": "Project Director",
     "tags": ["CubeSat", "national"],
@@ -45,15 +45,15 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "ICUBE-N is Pakistan's National CubeSat program. Dr. Rehan Mahmood serves as Project Director, with current emphasis on nanosatellite architecture and subsystem capability building."
+        "content": "ICUBE-N reflects national CubeSat capability-building with current emphasis on indigenous architecture, subsystem development, and mission-oriented nanosatellite engineering through SSTRL and associated programs."
       }
     ]
   },
   {
     "slug": "icube-1",
     "title": "ICUBE-1",
-    "shortDescription": "Pakistan's first university CubeSat. Worked on project management, subsystem analysis, software, testing, launch campaign participation, and post-launch operations.",
-    "description": "Pakistan's first university CubeSat. Dr. Rehan Mahmood worked on project management, subsystem analysis, software, testing, launch campaign participation, and post-launch operations.",
+    "shortDescription": "ICUBE-1 was Pakistan's first CubeSat and launched on 21 November 2013. Dr. Rehan Mahmood served in a project-management and senior systems-engineering role, contributing across subsystem/software work, environmental testing, launch-campaign participation, and broader mission execution support.",
+    "description": "ICUBE-1 was Pakistan's first CubeSat and launched on 21 November 2013. Dr. Rehan Mahmood served in a project-management and senior systems-engineering role, contributing across subsystem/software work, environmental testing, launch-campaign participation, and broader mission execution support. The mission represents a foundational step in Pakistan's CubeSat capability development.",
     "year": "2013",
     "role": "Technical Lead",
     "image": "/images/projects/icube-1.jpg",
@@ -61,15 +61,15 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "ICUBE-1 was Pakistan's first university CubeSat. Dr. Rehan Mahmood worked on project management, subsystem analysis, software, testing, launch campaign participation, and post-launch operations, establishing foundational credibility for subsequent ICUBE missions."
+        "content": "ICUBE-1 was Pakistan's first CubeSat and launched on 21 November 2013. Dr. Rehan Mahmood served in a project-management and senior systems-engineering role, contributing across subsystem/software work, environmental testing, launch-campaign participation, and broader mission execution support. The mission represents a foundational step in Pakistan's CubeSat capability development."
       }
     ]
   },
   {
     "slug": "ntn-ppdr-simulator",
     "title": "NGN/NTN–PPDR Simulator",
-    "shortDescription": "Digital-twin and scenario-evaluation platform for resilient communications across terrestrial and non-terrestrial networks. Operator-facing KPI workflows, visual mock interfaces, and future policy-simulation direction.",
-    "description": "NGN/NTN–PPDR scenario evaluation, digital-twin-driven analysis of resilient communications, and development of visual mock interfaces for operator-facing workflows. Includes integrated terrestrial/non-terrestrial communication scenarios, KPI-oriented analysis, and future policy-simulation direction.",
+    "shortDescription": "Active simulator and digital-twin direction for resilient communications across terrestrial and non-terrestrial network environments, especially for public protection and disaster relief (PPDR). The public website shows a representative frontend preview; the broader direction includes scenario evaluation, KPI-driven analysis, telecom-space convergence, and future operator-facing and policy-facing interfaces.",
+    "description": "The NGN/NTN–PPDR simulator reflects an active research and development direction around scenario evaluation, digital-twin thinking, resilient communications, and future operator-facing / policy-facing interfaces for terrestrial and non-terrestrial network environments. The public-facing site presents a representative frontend preview built from the broader simulator direction.",
     "year": "2024",
     "role": "Technical Lead",
     "tags": ["NTN", "PPDR", "simulator", "digital twin"],
@@ -80,7 +80,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "The NGN/NTN–PPDR simulator explores resilient public-protection and disaster-relief communication environments across terrestrial and non-terrestrial network architectures. Emphasis on scenario evaluation, operator-facing insight, architecture understanding, and future visual decision-support workflows. A simplified visual interface is planned to demonstrate mock telecom-space workflows. A related future direction is a mock-data policy simulation layer for PPDR-relevant decision environments."
+        "content": "The NGN/NTN–PPDR simulator reflects an active research and development direction around scenario evaluation, digital-twin thinking, resilient communications, and future operator-facing / policy-facing interfaces for terrestrial and non-terrestrial network environments. The public-facing site presents a representative frontend preview built from the broader simulator direction."
       }
     ]
   },

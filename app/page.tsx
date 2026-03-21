@@ -16,22 +16,24 @@ const PROOF_GROUP_ORDER: { label: string; ids: string[] }[] = [
 ];
 
 const OVERVIEW_BULLETS = [
-  "Director & Principal Investigator, SSTRL at IST, Islamabad",
+  "Director & Principal Investigator, Small Satellite Technology and Research Lab (SSTRL), IST, Islamabad",
   "Associate Professor in satellite and communication engineering",
   "Chief Technology Officer, Space Systems Pvt. Ltd.",
-  "20+ years in satellite communications, CubeSat systems, and technical leadership",
-  "Principal role in Pakistan's ICUBE-Q lunar CubeSat mission",
-  "Leadership across ICUBE-1, SSS-2A, ICUBE-N, ICUBE-CSAT, and STEM-focused space initiatives",
-  "Current work in NGN/NTN–PPDR digital twin, resilient communications, and policy-oriented simulation",
+  "20+ years in satellite communications, CubeSat systems, and technical program leadership",
+  "One of three Principal Investigators for ICUBE-Q, Pakistan's lunar CubeSat mission aboard Chang'e-6",
+  "Leadership contributions across ICUBE-1, SSS-2A, ICUBE-N, ICUBE-CSAT, and mission-oriented STEM initiatives",
+  "Currently leading indigenous 3U CubeSat and CubeSat training-kit development through SSTRL in collaboration with private partners",
+  "Current research and development includes NGN/NTN–PPDR digital twin, resilient communications, and policy-oriented simulation directions",
 ];
 
 const CURRENT_WORK_BULLETS = [
+  "Indigenous 3U CubeSat development through SSTRL",
+  "CubeSat training-kit development in collaboration with private partners",
   "NGN/NTN–PPDR digital twin and scenario evaluation",
   "Representative operator-facing views for resilient communication workflows",
   "Telecom-space convergence for public protection and disaster relief contexts",
-  "Frontend preview layers for simulator interaction using representative mock data",
+  "Frontend interactive previews built from broader simulator and platform development",
   "Policy-oriented simulation direction for structured scenario comparison",
-  "Ongoing capability-building around mission-oriented technical platforms",
 ];
 
 const RESEARCH_DIRECTION_BULLETS = [
@@ -89,7 +91,10 @@ export default function Home() {
                     <h3 className="font-serif text-xl font-semibold text-[var(--heading-color)] tracking-tight md:text-2xl">
                       {icubeQ.title}
                     </h3>
-                    <p className="mt-2 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
+                    <p className="mt-1 text-[0.8125rem] text-[var(--secondary-text)] leading-snug">
+                      Pakistan&apos;s lunar CubeSat mission aboard Chang&apos;e-6
+                    </p>
+                    <p className="mt-2 max-w-2xl text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
                       {icubeQ.shortDescription}
                     </p>
                     {icubeQ.role && (
@@ -111,12 +116,16 @@ export default function Home() {
                 )}
                 <div className="pl-3 border-l border-[var(--border)]">
                   <h3 className="font-serif text-lg font-semibold text-[var(--heading-color)] tracking-tight">
-                    SSTRL / CubeSat Programs
+                    SSTRL and CubeSat Programs
                   </h3>
-                  <p className="mt-1.5 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
-                    Leadership of Pakistan's small-satellite lab ecosystem through SSTRL: CubeSat capability development,
-                    lab establishment, training, student projects, and national missions (ICUBE-1, ICUBE-N, SSS-2A,
-                    ICUBE-CSAT).
+                  <p className="mt-1 text-[0.8125rem] text-[var(--secondary-text)] leading-snug">
+                    Indigenous CubeSat capability building through SSTRL
+                  </p>
+                  <p className="mt-1.5 max-w-2xl text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
+                    SSTRL is the Small Satellite Technology and Research Lab at IST—a capability-building platform for
+                    mission-oriented satellite development, student training, laboratory growth, and indigenous systems
+                    work. Current direction includes indigenous 3U CubeSat and CubeSat training-kit development in
+                    collaboration with private partners, alongside broader national small-satellite and STEM initiatives.
                   </p>
                 </div>
                 {ntnSimulator && (
@@ -124,7 +133,10 @@ export default function Home() {
                     <h3 className="font-serif text-lg font-semibold text-[var(--heading-color)] tracking-tight">
                       NGN/NTN–PPDR Simulator
                     </h3>
-                    <p className="mt-1.5 text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
+                    <p className="mt-1 text-[0.8125rem] text-[var(--secondary-text)] leading-snug">
+                      Resilient communications across terrestrial and non-terrestrial networks
+                    </p>
+                    <p className="mt-1.5 max-w-2xl text-[0.9375rem] leading-[1.85] text-[var(--body-text)] md:text-base">
                       {ntnSimulator.shortDescription}
                     </p>
                   </div>
@@ -146,7 +158,7 @@ export default function Home() {
                   Selected Interactive Previews
                 </h3>
                 <p className="mt-1.5 text-[0.8125rem] leading-[1.7] text-[var(--muted)] max-w-2xl">
-                  Frontend interactive previews using representative mock data. Derived from ongoing simulator and platform development work.
+                  Representative frontend previews—illustrative UIs from broader simulator work, not full deployments.
                 </p>
                 <ul className="mt-3 space-y-2">
                   <li>

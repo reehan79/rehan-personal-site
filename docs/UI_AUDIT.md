@@ -5,6 +5,18 @@
 
 Screenshots regenerated after visual polish pass (typography, ICUBE-Q flagship, evidence links, spacing).
 
+## Content clarity pass (March 2025)
+
+- **Goal**: First-time visitors understand ICUBE-Q (APSCO / Chang'e-6 context), SSS-2A (Student Small Satellite program), ICUBE-1 (first CubeSat, 2013), SSTRL current direction (3U CubeSat, training kit), and NGN/NTN program vs site previews—without adding sections or long paragraphs.
+- **Homepage**: Overview bullets expanded (8 lines, still scannable); Selected Work ICUBE-Q gains one subtitle line under title; SSTRL block rewritten; Current Work and Research Direction bullets sharpened; Interactive Previews intro clarified as representative UIs.
+- **Content**: `content/generated/projects.json` and source-of-truth markdown updated in sync; IAF/IAC recognition not added (no source in repo).
+
+## Canonical copy pass (March 2026, recorded 2026-03-20)
+
+- **Source-of-truth alignment**: Homepage Overview, Current Work, Research Direction, and Selected Work (ICUBE-Q, SSTRL and CubeSat Programs, NGN/NTN–PPDR) match supplied canonical strings; `projects.json` uses Part B (shortDescription) vs Part C (`description` + first section) where specified.
+- **Screenshots**: `home-desktop-full.png`, `home-desktop-above-fold.png`, `home-mobile.png` (and full script set) regenerated after this pass; filenames unchanged.
+- **Scannability polish (same pass)**: `shortDescription` compacted for homepage/cards; full paragraphs retained on project pages; Selected Work bodies use `max-w-2xl` for line length.
+
 ## Portrait and SEO (March 2025)
 
 - **Portrait**: Real portrait added to left rail at `public/profile/rehan-mahmood-portrait.jpeg` (note: file is .jpeg). Placed directly below name/title/summary block, above AuthorityImageCarousel and key facts. 4:5 aspect ratio, object-cover object-[center_top] for head-and-shoulders framing, rounded-lg, subtle shadow. Desktop max-w-[220px], mobile max-w-[140px].

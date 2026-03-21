@@ -1,7 +1,13 @@
 # Current Work and Research Direction
 
 ## Current Work
-Dr. Rehan Mahmood's current work focuses on NGN/NTN–PPDR scenario evaluation, digital-twin-driven analysis of resilient communications, and the development of visual mock interfaces for operator-facing workflows. This includes integrated terrestrial/non-terrestrial communication scenarios, KPI-oriented analysis, and future-facing telecom-space convergence use cases.
+- Indigenous 3U CubeSat development through SSTRL
+- CubeSat training-kit development in collaboration with private partners
+- NGN/NTN–PPDR digital twin and scenario evaluation
+- Representative operator-facing views for resilient communication workflows
+- Telecom-space convergence for public protection and disaster relief contexts
+- Frontend interactive previews built from broader simulator and platform development
+- Policy-oriented simulation direction for structured scenario comparison
 
 ## NGN/NTN–PPDR Digital Twin Direction
 The current simulator direction explores resilient public-protection and disaster-relief communication environments across terrestrial and non-terrestrial network architectures. The emphasis is on scenario evaluation, operator-facing insight, architecture understanding, and future visual decision-support workflows.
@@ -13,13 +19,13 @@ A simplified visual interface is planned to demonstrate mock telecom-space workf
 A related future direction is the development of a mock-data policy simulation layer for PPDR-relevant decision environments. The aim is to bridge technical system evaluation with policy-facing scenario understanding and decision-support logic.
 
 ## Research Direction
-Current research direction includes:
-- Doppler, propagation, and related channel effects in integrated NTN scenarios
-- digital-twin and KPI-driven evaluation of resilient communication environments
-- robust transmission of deep-space images and coding/decoding methods
-- high-performance on-board computing for CubeSats
-- magnetorquers, antennas, payloads, and nanosatellite subsystem engineering
-- future publication and demo modules around NTN, PPDR, and mission-oriented training platforms
+- Doppler and propagation-effect analysis in integrated NTN scenarios
+- KPI-driven and digital-twin-oriented evaluation of resilient communication environments
+- 5G-LENA / ns-3 aligned scenario and architecture workflows
+- SDR-linked experimentation, including USRP E310-oriented prototyping direction
+- Deep-space image transmission and coding/decoding research themes
+- CubeSat subsystem engineering, including OBC, antenna, and magnetorquer work
+- Future publication, simulator, and mission-training modules
 
 ## Publication-Driven Themes
 Publication themes include:
